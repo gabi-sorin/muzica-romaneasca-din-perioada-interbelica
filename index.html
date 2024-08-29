@@ -1,0 +1,134 @@
+</html>
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artiști Interbelici</title>
+    <style>
+
+      .banner_home_page {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-top: 56.25%;
+        overflow: hidden;
+      }
+
+      .banner_home_page img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .banner_home_page h1 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        padding: 0;
+        color: white;
+        text-align: center;
+        font-size: 4vw;
+        width: 100%;
+        z-index: 1;
+        text-shadow: 1.5vw 1.5vw 2.5vw rgb(0, 0, 0);
+        white-space: nowrap;
+        overflow: hidden;    
+      }
+
+      .banner_home_page h1 {
+        animation: animated-text 3.5s linear 1s 1 normal both,
+        animated-cursor 200ms linear infinite;
+      }
+
+      @keyframes animated-text{
+        from{width: 0;}
+        to{width: 55vw;}
+      }
+
+/* cursor animations */
+
+      @keyframes animated-cursor{
+        from{border-right-color: rgba(255,255,255,.75);}
+        to{border-right-color: transparent;}
+      }
+
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+
+      .content {
+        display: flex;
+        padding: 20px;
+      }
+
+      .text {
+        flex: 2;
+        padding-right: 20px;
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .image {
+        flex: 1;
+      }
+
+      .image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      table {
+        width: 100%;
+        table-layout: fixed; /* Ensure equal width for each column */
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+    <div class="menu_bar">
+      <table>
+        <tr class="menu_table">
+          <th class="menu_cells">
+            <a href="./index.html">
+              <img src="./poze/acasa.png" alt="Acasă" /> Acasă
+            </a>
+          </th>
+
+          <th class="menu_cells">
+            <a href="./artisti.html"> Artiști </a>
+          </th>
+
+          <th class="menu_cells">
+            <div class="iframe-container">
+              <iframe 
+                class="search-bar-iframe" 
+                src="./cauta.html" 
+                scrolling="no">
+              </iframe>
+            </div>
+          </th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="banner_home_page">
+      <img src="./poze/piata-unirii-1914-iasul-de-odinioara-laiasi.png" alt="Piata Unirii 1914">
+      <h1>Musique dú petit Paris</h1>
+    </div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </body>
+</html>

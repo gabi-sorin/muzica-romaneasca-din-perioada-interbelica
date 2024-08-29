@@ -1,0 +1,83 @@
+:root{
+  --widt: 1000
+}
+
+a:link {
+    color: #000;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: #000;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #000;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  a:active {
+    color: #000;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  .menu_bar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+    z-index: 2; /* Ensure it's behind the suggestions */
+    
+  }
+
+  body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+
+
+
+  table {
+    width: 100%;
+    table-layout: fixed; /* Ensure equal width for each column */
+  }
+
+  .menu_cells {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .search-bar-iframe {
+    width: 100%;
+    min-height: 130px;
+    height: 220px;
+    border: none; /* Remove iframe border */
+  }
+
+
+
+  .iframe-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: visible; /* Allow overflow */
+    max-height: 70px;
+    min-width: 146px;
+  }
+
+
+  @media (max-width: 460px) {
+    .menu_cells:nth-child(3){
+      width: 150px;
+    }
+  }

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artiști Interbelici</title>
+    <style>
+        a:link,
+        a:visited {
+            color: #000;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:active {
+            color: #000;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        .menu_bar {
+            width: 100%;
+            position: sticky;
+            top: 0;
+            text-align: center;
+            background-color: #ffffff;
+            border-bottom: 1px solid #ccc;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: nowrap;
+            padding: 20px;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .text {
+            flex: 1;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            padding-right: 20px;
+            word-wrap: break-word;
+        }
+
+        .image {
+            flex-shrink: 0;
+            width: 300px;
+            height: auto;
+            align-self: flex-start;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .menu_cells {
+            text-align: center;
+            width: 33.33%;
+        }
+
+        .menu_writing {
+            font-weight: bold;
+            font-size: 16px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu_bar">
+        <table width="100%">
+            <tr>
+                <th class="menu_cells">
+                    <a href="./index.html" class="menu_writing">
+                        <img src="./poze/acasa.png" alt="Acasă" /> Acasă
+                    </a>
+                </th>
+                <th class="menu_cells">
+                    <a href="./artisti.html" class="menu_writing"> Artiști </a>
+                </th>
+                <th class="menu_cells">
+                    <a href="./cauta.html" class="menu_writing">
+                        <img src="./poze/cauta.png" alt="Caută" /> Caută
+                    </a>
+                </th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="content">
+        <div class="text">
+            <h1>Maria Tănase</h1>
+            <p>yap yap yap</p>
+            <p>yap yap yap</p>
+        </div>
+        <div class="image">
+            <img src="./poze/mariatanase.jpg" alt="Maria Tănase">
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- 
+let nus_ce_nume_sa_pun = document.createElement('img');
+nus_ce_nume_sa_pun.src = artist.image;
+nus_ce_nume_sa_pun.alt = artist.name;
+nus_ce_nume_sa_pun.height = "100px";
+artistCard.appendChild(nus_ce_nume_sa_pun);
+
+nus_ce_nume_sa_pun = document.createElement('div');
+nus_ce_nume_sa_pun.className = 'artist-info';
+
+let copil_vreau_o_singura_variabila = document.createElement('h3');
+copil_vreau_o_singura_variabila.textContent = artist.name;
+nus_ce_nume_sa_pun.appendChild(copil_vreau_o_singura_variabila);
+
+copil_vreau_o_singura_variabila = document.createElement('p');
+copil_vreau_o_singura_variabila.textContent = artist.description;
+nus_ce_nume_sa_pun.appendChild(copil_vreau_o_singura_variabila);
+
+copil_vreau_o_singura_variabila = document.createElement('a');
+copil_vreau_o_singura_variabila.alt = 'Apasa pentru a afla mai multe';
+copil_vreau_o_singura_variabila.textContent = 'Mai multe:';
+copil_vreau_o_singura_variabila.href = trimite_userul_la_fisierul_selectat(artist.name);
+nus_ce_nume_sa_pun.appendChild(copil_vreau_o_singura_variabila);
+
+
+artistCard.appendChild(nus_ce_nume_sa_pun);
+featuredArtistsContainer.appendChild(artistCard);
+-->

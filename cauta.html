@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Bar</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- onkeyup="this.innerHTML=[['keyCode'].map(k=>event[k]),['key'].map(k=>event[k])]" -->
+    <script src="search_bar_logic.js"></script>
+    <form style="margin-top: 15px;">
+      <div class="search-wrapper">
+        <div class="search">
+          <span class="material-symbols-outlined">search</span>
+          <div class="input-wrapper">
+            <input
+              class="search-input"
+              id="searches-input"
+              type="search"
+              onclick="cauta(''+document.getElementById('searches-input').value)"
+              placeholder="Căutare"
+              autocomplete="off"
+            />
+            <div class="suggestions-wrap">
+              <ul class="suggestions">
+                <!-- Suggestii generate -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
