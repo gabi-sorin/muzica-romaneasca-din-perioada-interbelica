@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function trimite_userul_la_fisierul_selectat(valoare_input){
     valoare_input = valoare_input.toLowerCase();
-    window.location.href = "./artisti/"+valoare_input+".html";
+    window.location.href = "./artisti_toti/"+valoare_input+".html";
 }
 
 

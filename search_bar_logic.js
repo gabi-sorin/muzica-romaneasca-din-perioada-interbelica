@@ -131,7 +131,7 @@ function selectSuggestion(numar) {
 
 function trimite_userul_la_fisierul_selectat(valoare_input){
   valoare_input = valoare_input.toLowerCase();
-  window.parent.location.href = "./artisti/"+valoare_input+".html";
+  window.parent.location.href = "./artisti_toti/"+valoare_input+".html";
 }
 
 function cauta(searchterm) {
