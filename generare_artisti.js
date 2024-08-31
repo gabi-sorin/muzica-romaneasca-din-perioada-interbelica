@@ -24,7 +24,7 @@ const nume_artisti = [
     "Zavaidoc",
   ];
 
-addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
     let div = document.getElementsByClassName("partea_cu_artisti")[0];
     let ult_litera = "?"
