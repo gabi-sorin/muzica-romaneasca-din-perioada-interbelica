@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="./menu_bar.css"/>
     <style>
 
+      :root{
+        --widt: min(1100,90%);
+      }
       .banner_home_page {
         position: relative;
         width: 100%;
@@ -34,7 +37,7 @@
         padding: 0;
         color: white;
         text-align: center;
-        font-size: 24px; /* Base font size */
+        font-size: 52px; /* Base font size */
         width: 100%;
         z-index: 1;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -59,7 +62,7 @@
         to{border-right-color: transparent;}
       }
 
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 1300px) {
         .banner_home_page h1 {
           font-size: 4vw;
         }
@@ -97,30 +100,82 @@
 
       table {
         width: 100%;
-        table-layout: fixed; /* Ensure equal width for each column */
+        table-layout: fixed;
       }
 
       .container {
-        max-width: 900px;
+        max-width: 1300px;
         margin: 0 auto;
         width: 100%;
+        border: none;
       }
 
       .writable_space{
         height: fit-content;
         background-color: #f5f5f5;
-        width: min(900px,90%);
+        max-width: 1300px;
+
+        width: 100%;
         z-index: 0;
+        border: none;
+        border-radius: 0%;
       }
 
       .the_whole_site{
+        position: relative;
         width: 100%;
         height: fit-content;
-        background-color: #302a00a5;
-        z-index: -1;
-        display: flex;
-        justify-content: center;
+        border: none;
       }
+
+
+      .cell{
+        border: none;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+
+      .cell:nth-child(1) {
+    background: linear-gradient(to left, #302a00a5,rgba(133, 117, 0, 0.647));
+
+  }
+
+  .cell:nth-child(3) {
+    background: linear-gradient(to right, #302a00a5,rgba(133, 117, 0, 0.647));
+  }
+
+      @media (min-width: 1300px) {
+  .cell:nth-child(1),
+  .cell:nth-child(3) {
+    width: calc((100% - 1300px) / 2); /* Divide the remaining space equally between the first and third cells */
+  }
+
+
+
+  .cell:nth-child(2) {
+    max-width: calc(1300*0.9)px;
+    width: calc(1300*0.9px);
+  }
+}
+
+@media (max-width: 1300px) {
+  .cell:nth-child(1),
+  .cell:nth-child(3) {
+    width: calc(5%); /* Assigns a small width to the side cells on smaller screens */
+  }
+
+  .cell:nth-child(2) {
+    background: none;
+    max-width: 90%;
+    width: 90%; /* Width proportional to the screen size when it's smaller than 900px */
+  }
+}
+
+
+
 
 
     </style>
@@ -129,7 +184,7 @@
   <body>
     <div class="menu_bar">
       <table>
-        <tr class="menu_table">
+        <tr>
           <th class="menu_cells">
             <a href="./index.html">
               <img src="./poze/acasa.png" alt="Acasă" /> Acasă
@@ -154,15 +209,23 @@
     </div>
 
   <div class="the_whole_site">
-    <div class="writable_space">
-      <div class="container">
-        <div class="banner_home_page">
-          <img src="./poze/piata-unirii-1914-iasul-de-odinioara-laiasi.png" alt="Piata Unirii 1914">
-          <h1>Musique dú petit Paris</h1>
+    <table style="border: none;">
+      <tr>
+      <th class="cell"><div></div></th>
+      <th class="cell">
+        <div class="writable_space">
+          <div class="container">
+            <div class="banner_home_page">
+              <img src="./poze/piata-unirii-1914-iasul-de-odinioara-laiasi.png" alt="Piata Unirii 1914">
+              <h1>Musique dú petit Paris</h1>
+            </div>
+          </div>
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         </div>
-      </div>
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </div>
+      </th>
+      <th class="cell"><div></div></th>
+    </tr>
+    </table>
   </div>
   </body>
 </html>
