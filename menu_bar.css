@@ -30,7 +30,7 @@ a:link {
     top: 0;
     background-color: #ffffff;
     border-bottom: 1px solid #ccc;
-    z-index: 2; /* Ensure it's behind the suggestions */
+    z-index: 3; /* Ensure it's behind the suggestions */
     
   }
 
