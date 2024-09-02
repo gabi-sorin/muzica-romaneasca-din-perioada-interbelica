@@ -205,5 +205,6 @@ function grow_iframe(input)
 }
 
 function select_size(nr){
-  window.parent.change(nr);
+  if(window.parent.document.URL.includes("/artisti.html"))
+    window.parent.change(nr);
 }
