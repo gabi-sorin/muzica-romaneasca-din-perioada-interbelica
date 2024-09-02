@@ -54,10 +54,16 @@ a:link {
     text-align: center;
   }
 
-  .search-bar-iframe {
+  .search-bar-iframe-mare {
     width: 100%;
     min-height: 130px;
     height: 220px;
+    border: none; /* Remove iframe border */
+  }
+
+  .search-bar-iframe-mic {
+    width: 100%;
+    height: 70px;
     border: none; /* Remove iframe border */
   }
 

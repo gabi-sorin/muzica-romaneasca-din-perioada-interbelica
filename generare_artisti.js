@@ -24,43 +24,60 @@ const nume_artisti = [
     "Zavaidoc",
   ];
 
+//<div class="letter-group">
+//   <div class="letter">A</div>
+//   <ul class="names">
+//       <li>Alex</li>
+//       <li>Andrew</li>
+//       <li>Anna</li>
+//       <li>12345678901234567890</li>
+//   </ul>
+// </div>
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
-    let div = document.getElementsByClassName("partea_cu_artisti")[0];
+    let div = document.getElementsByClassName("container")[0];
     let ult_litera = "?"
     var ul;
     for(let i=0;i<nume_artisti.length;i++)
     {
-        let x = nume_artisti[i][0];
         if(ult_litera===nume_artisti[i][0])
         {
             let li = document.createElement("li");
-            li.setAttribute("class","artisti_li");
             li.textContent = nume_artisti[i];
+            add_click_listener(li);
             ul.appendChild(li);
         }
         else
         {
+            let new_group = document.createElement("div");
+            new_group.setAttribute("class","letter-group");
             ult_litera = nume_artisti[i][0];
             ul = document.createElement("ul");
-            ul.setAttribute("class","artisti_ul");
-            let h1 = document.createElement("h1");
-            h1.setAttribute("class","artisti_h1");
-            h1.textContent = nume_artisti[i][0];
-            div.appendChild(h1);
-            div.appendChild(ul);
+            ul.setAttribute("class","names");
+            let litera = document.createElement("div");
+            let h1 = document.createElement("div");
+            h1.setAttribute("class","letter");
+            h1.textContent = ult_litera;
+            new_group.appendChild(h1);
+            new_group.appendChild(ul);
 
             let li = document.createElement("li");
-            li.setAttribute("class","artisti_li");
             li.textContent = nume_artisti[i];
-            li.addEventListener("click", function(){
-                trimite_userul_la_fisierul_selectat(li.textContent);
-            })
+            add_click_listener(li);
             ul.appendChild(li);
+            div.appendChild(new_group);
         }
     }
 
 });
+
+function add_click_listener(obj){
+    obj.addEventListener("click", function(){
+        trimite_userul_la_fisierul_selectat(obj.textContent);
+    })
+}
 
 function trimite_userul_la_fisierul_selectat(valoare_input){
     valoare_input = valoare_input.toLowerCase();

@@ -57,18 +57,29 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   document.addEventListener("keyup", function (event) {
     if (input && event.key != "Enter" && event.key != "ArrowDown" && event.key != "ArrowUp" ) {
-      cauta(input.value);
+      {
+        select_size(1);
+        cauta(input.value);
+      }
     }
   });
 
-  window.addEventListener("click", function () {
+  parent.document.addEventListener("click", function () {
+    const activeElement = document.activeElement;
+    if(activeElement.className!=="search-input")
+      {
+        curatare_lista();
+        select_size(0);
+      }
+  });
+
+
+  window.addEventListener('click',function(){
     const activeElement = document.activeElement;
     if (activeElement && activeElement.classList.contains("suggestions-li")) {
-      selectSuggestion(0);
+        selectSuggestion(0);
     }
-    if(activeElement.className!=="search-input")
-      curatare_lista()
-  });
+  })
 });
 
 function navigateSuggestions(direction) {
@@ -185,4 +196,9 @@ function curatare_lista() {
   while (ul.firstChild) {
     ul.removeChild(ul.firstChild);
   }
+}
+
+function select_size(nr){
+  window.parent.change(nr);
+
 }
