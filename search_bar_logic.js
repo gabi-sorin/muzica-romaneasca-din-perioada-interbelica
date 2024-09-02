@@ -198,7 +198,12 @@ function curatare_lista() {
   }
 }
 
+function grow_iframe(input)
+{
+  select_size(1);
+  cauta(input);
+}
+
 function select_size(nr){
   window.parent.change(nr);
-
 }

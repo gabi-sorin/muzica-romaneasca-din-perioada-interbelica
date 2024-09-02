@@ -67,6 +67,13 @@ a:link {
     border: none; /* Remove iframe border */
   }
 
+  .search-bar-iframe {
+    width: 100%;
+    min-height: 130px;
+    height: 220px;
+    border: none; /* Remove iframe border */
+  }
+
 
 
   .iframe-container {
