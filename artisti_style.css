@@ -24,6 +24,10 @@
 .artist {
     font-family: Verdana, Geneva, Tahoma, sans-serif, Times New Roman;
 }
-.artist {
-    font-family: Verdana, Geneva, Tahoma, sans-serif, Times New Roman;
+
+.imagine {
+    float: right;
+    margin-left: 5px; 
+    margin-bottom: 5px;
+    width: 20%;
 }

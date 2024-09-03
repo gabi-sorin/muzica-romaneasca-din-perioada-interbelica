@@ -1,25 +1,37 @@
 const nume_artisti = [
-  "Alia Baianova",
+  "Alfred Alessandrescu",
+  "Alla Baianova",
+  "Constantin C. Nottara",
   "Cristian Vasile",
+  "Dimitrie Cuclin",
   "Dorel Livianu",
+  "Dumitru Kiriac Georgescu",
   "Elena Zamora",
-  "Elly Roman",
+  "Filip Lazar",
   "George Enescu",
   "George Sbarcea",
   "Gherase Dendrino",
   "Gica Petrescu",
   "Gion",
+  "Grigoras Dinicu",
   "Ioana Radu",
   "Ion Luican",
+  "Ion Nonna Otescu",
   "Ion Vasilescu",
   "Ionel Fernic",
   "Jean Moscopol",
   "Manole Stroici",
   "Maria Tanase",
   "Mia Braia",
+  "Nicolae Bretan",
+  "Nicu Fanica",
   "Nicu Stoenescu",
   "Petre Alexandru",
+  "Petre Lescenco",
   "Rodica Bujor",
+  "Sile Dinicu",
+  "Theodor Rogalski",
+  "Tiberiu Brediceanu",
   "Titi Botez",
   "Zavaidoc",
 ];
@@ -79,7 +91,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (activeElement && activeElement.classList.contains("suggestions-li")) {
         selectSuggestion(0);
     }
-  })
+  });
+
+  let ul = document.getElementsByClassName("suggestions-wrap")[0];
+
+  document.addEventListener("scroll",function(){
+
+  });
+
 });
 
 function navigateSuggestions(direction) {
@@ -88,7 +107,6 @@ function navigateSuggestions(direction) {
 
   let index = -1;
 
-  // Find index of the currently focused element
   for (let i = 0; i < items.length; i++) {
     if (items[i] === activeElement) {
       index = i;
@@ -96,7 +114,6 @@ function navigateSuggestions(direction) {
     }
   }
 
-  // Calculate new index based on direction
   if (index === -1) {
     if (direction === 1)
       //Down
@@ -165,10 +182,21 @@ function cauta(searchterm) {
 function in_ce_lista_e_stringul(nume1, nume2) {
   nume1 = nume1.toLowerCase();
   nume2 = nume2.toLowerCase();
+  let j = 0
+  let incepe_cu = true;
+  for( let i = 0; i<nume2.length ; i++) //parcurge sugestia
+  {
+    if(j<nume1.length && (nume2[i] === nume1[j] || inlocuieste_diacritice(nume2[i]) === nume1[j]) )
+      j++;
+    else if(j<nume1.length)
+      incepe_cu = false;
+  }
+  if(incepe_cu === true)
+    return 0;
+  else if(j === nume1.length)
+    return 1;
+  else return 2;
 
-  if (nume2.startsWith(nume1)) return 0; // Dacă nume2 începe cu nume1
-  else if (nume2.includes(nume1)) return 1; // Dacă nume2 conține nume1
-  return 2;
 }
 
 function adauga_raspuns() {
@@ -188,7 +216,24 @@ function adauga_raspuns() {
       ul.appendChild(li);
     }
   }
-  //adauga_adresa(document.getElementsByClassName("suggestions-li"));
+}
+
+function inlocuieste_diacritice(nume){
+  let nume_nou = '';
+  for(let i = 0; i < nume.length ; i++)
+  {
+    if(nume[i] === 'ă' || nume[i] === 'â')
+      nume_nou +=  'a';
+    else if(nume[i] === 'î')
+      nume_nou.push('i');
+    else if(nume[i] ==='ț')
+      nume_nou.push('t');
+    else if(nume[i] === 'ș')
+      nume_nou.push('s');
+    else
+      nume_nou += nume[i];
+  }
+  return nume_nou;
 }
 
 function curatare_lista() {

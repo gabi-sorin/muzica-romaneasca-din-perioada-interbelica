@@ -5,9 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./../artisti_style.css" />
+    <link rel="stylesheet" href="./../menu_bar.css"/>
 </head>
 <body>
-    <img width="20%" src="./../poze/zavaidoc.jpg" style="float: right; margin-left: 5px; margin-bottom: 5px;">
+    <div class="menu_bar">
+        <table>
+          <tr>
+            <th class="menu_cells">
+              <a href="./../index.html">
+                <img src="./../poze/acasa.png" alt="Acasă" /> Acasă
+              </a>
+            </th>
+  
+            <th class="menu_cells">
+              <a href="./../artisti.html"> Artiști </a>
+            </th>
+  
+            <th class="menu_cells">
+              <div class="iframe-container">
+                <iframe 
+                  class="search-bar-iframe" 
+                  src="./../cauta.html" 
+                  scrolling="no">
+                </iframe>
+              </div>
+            </th>
+          </tr>
+        </table>
+      </div>
+    <img class="imagine" src="./../poze/zavaidoc.jpg">
     <p class="titlu";> Zavaidoc (8 martie 1896 - 13 ianuarie 1945) </p>
     <p class="text";> Marin Gheorghe Teodorescu, cu pseudonimul <i>Zavaidoc</i>, 
         el a fost un cântăreț român de muzică populară românească și de romanțe din perioada interbelică. </p>
