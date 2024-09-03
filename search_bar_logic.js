@@ -146,12 +146,12 @@ function selectSuggestion(numar) {
     if(li.textContent === undefined)
         return 0;
     else
-      trimite_userul_la_fisierul_selectat(li.textContent);
+      trimite_userul_la_fisierul_selectat(inlocuieste_diacritice(li.textContent));
       curatare_lista();
   } else {
     const activeElement = document.activeElement;
     if (activeElement && activeElement.classList.contains("suggestions-li")) {
-      trimite_userul_la_fisierul_selectat(activeElement.textContent);
+      trimite_userul_la_fisierul_selectat(inlocuieste_diacritice(activeElement.textContent));
       curatare_lista(); // Clear suggestions after selection
     }
   }
