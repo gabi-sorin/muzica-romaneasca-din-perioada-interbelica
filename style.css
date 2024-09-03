@@ -42,8 +42,9 @@
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 10; /* Ensure it's in front */
-    max-height: calc(3 * 48px);
+    max-height: calc(4 * 54px);
     overflow-y: auto;
+    scroll-snap-type: y mandatory;
   }
 
 .suggestions {
@@ -53,10 +54,12 @@
 }
 
 .suggestions-li {
-    padding: 14px 8px;
+    padding: 18px 8px;
     display: flex;
     align-items: center;
     cursor: pointer;
+    scroll-behavior: smooth;
+    scroll-snap-align: start;
 }
 
 .suggestions-a {

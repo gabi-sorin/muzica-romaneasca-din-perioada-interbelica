@@ -83,7 +83,7 @@ h2 {
 }
 
 .artist-info p {
-    font-size: 0.9em;
+    font-size: 14.4px;
     color: var(--text-color);
     flex-grow: 1;
 }
