@@ -24,10 +24,34 @@
 .artist {
     font-family: Verdana, Geneva, Tahoma, sans-serif, Times New Roman;
 }
+.artist {
+    font-family: Verdana, Geneva, Tahoma, sans-serif, Times New Roman;
+}
+.center {
+    margin-left: auto; 
+    margin-right: auto;
+}
 
-.imagine {
-    float: right;
-    margin-left: 5px; 
-    margin-bottom: 5px;
-    width: 20%;
+p{
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+tr{
+    flex: auto;
+}
+
+td{
+    width: fit-content;
+    padding: 2vw;
+    text-align: center;
+    vertical-align: middle;
+}
+
+iframe {
+    width: 25vw;
+}
+
+table{
+    table-layout: fixed;
 }
