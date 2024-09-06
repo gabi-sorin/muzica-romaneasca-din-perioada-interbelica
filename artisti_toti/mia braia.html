@@ -6,59 +6,82 @@
     <title>Document</title>
     <link rel="stylesheet" href="./../artisti_style.css" />
     <link rel="stylesheet" href="./../menu_bar.css"/>
+    <link rel="stylesheet" href="./../styles.css"/>    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+  />
+  <link rel="stylesheet" href="./../style.css" />
 </head>
 <body>
 
-    <div class="menu_bar">
-        <table>
-          <tr>
-            <th class="menu_cells">
-              <a href="./../index.html">
-                <img src="./../poze/acasa.png" alt="Acasă" /> Acasă
-              </a>
-            </th>
-  
-            <th class="menu_cells">
-              <a href="./../artisti.html"> Artiști </a>
-            </th>
-  
-            <th class="menu_cells">
-              <div class="iframe-container">
-                <iframe 
-                  class="search-bar-iframe" 
-                  src="./../cauta.html" 
-                  scrolling="no">
-                </iframe>
+  <script src="./../search_bar_logic.js"></script>
+
+  <div class="menu_bar">
+    <table>
+      <tr>
+        <th class="menu_cells">
+          <a href="./../index.html">
+            <img src="./../poze/acasa.png" alt="Acasă" /> Acasă
+          </a>
+        </th>
+
+        <th class="menu_cells">
+          <a href="./../artisti.html"> Artiști </a>
+        </th>
+
+        <th class="menu_cells">
+          <div class="iframe-container">
+            <form>
+              <div class="search-wrapper">
+                <div class="search">
+                  <span class="material-symbols-outlined">search</span>
+                  <div class="input-wrapper">
+                    <input
+                      class="search-input"
+                      id="searches-input"
+                      type="search"
+                      onclick="cauta(''+document.getElementById('searches-input').value)"
+                      placeholder="Căutare"
+                      autocomplete="off"
+                    />
+                    <div class="suggestions-wrap">
+                      <ul class="suggestions">
+                        <!-- Suggestii generate -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </th>
-          </tr>
-        </table>
-      </div>
+            </form>
+          </div>
+        </th>
+      </tr>
+    </table>
+  </div>
       
     <img width="20%" src="./../poze/miabraia.jpg" style="float: right; margin-left: 5px; margin-bottom: 5px;">
     <p class="titlu";> Mia Braia (8 septembrie 1911 – 3 iulie 1999) </p>
-    <p class="text";> A fost o cântăreață română de muzică ușoară și romanțe, 
+    <p class="text";> A fost o cântăreață de muzică ușoară și romanțe, 
         celebră în perioada interbelică și în primii ani ai regimului 
         comunist. Născută în Craiova, a fost sora mai mică a celebrei 
-        cântărețe Ioana Radu, cu care a împărtășit nu doar pasiunea 
-        pentru muzică, ci și scena. </p>
+        cântărețe <a href="./ioana radu.html">Ioana Radu</a>. </p>
     <p class="subtitlu";> Lansarea în muzică </p>
-    <p class="text";> Debutul ei a avut loc în anii ’30, când a început să interpreteze 
+    <p class="text";> Debutul ei a avut loc în anii '30, când a început să interpreteze 
         romanțe și cântece de petrecere la radio și în sălile de concert 
-        din București. Printre piesele sale celebre se numără „La fereastră 
-        unde doarme o pisică”, „Vioara” și „Poveste de amor”. 
-        Mia Braia a colaborat cu mari compozitori ai vremii, precum Ion 
-        Vasilescu și Gherase Dendrino. Pe lângă activitatea artistică, a 
-        fost apropiată de nume mari ale muzicii românești, precum Maria 
-        Tănase și Zavaidoc, cu care a împărțit scena în numeroase turnee și 
+        din București. Printre piesele sale celebre se numără "La fereastră 
+        unde doarme o pisică", "Vioara" și "Poveste de amor". 
+        Mia Braia a colaborat cu mari compozitori ai vremii, precum <a href="./ion vasilescu.html">Ion 
+        Vasilescu</a> și <a href="./gherase dendrino.html">Gherase Dendrino</a>. Pe lângă activitatea artistică, a 
+        fost apropiată de nume mari ale muzicii românești, precum <a href="./maria tanase.html">Maria 
+        Tănase</a> și <a href="./zavaidoc.html">Zavaidoc</a>, cu care a împărțit scena în numeroase turnee și 
         spectacole de revistă. </p>
     <p class="subtitlu";> Regimul comunist </p>
-    <p class="text";> În anii ’50, odată cu instaurarea regimului comunist, a fost nevoită 
+    <p class="text";> În anii '50, odată cu instaurarea regimului comunist, a fost nevoită 
         să se adapteze noilor cerințe culturale impuse de autorități. Chiar 
         și în aceste condiții, Mia Braia a continuat să cânte, fiind una dintre 
         puținele artiste care au rămas active pe parcursul întregii sale vieți. 
         În 1963, când Maria Tănase a fost nevoită să-și întrerupă turneul din 
-        cauza bolii, Mia Braia a preluat locul acesteia, demonstrând nu doar 
+        cauza unei boli, Mia Braia a preluat locul acesteia, demonstrând nu doar 
         talent, ci și devotament față de colegii ei. Spre finalul carierei, 
         a înregistrat mai puțin, dar a rămas o prezență constantă în emisiunile 
         de radio și televiziune, păstrând vie tradiția romanței și a cântecelor 

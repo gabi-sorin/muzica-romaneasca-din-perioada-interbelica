@@ -6,64 +6,88 @@
     <title>Document</title>
     <link rel="stylesheet" href="./../artisti_style.css" />
     <link rel="stylesheet" href="./../menu_bar.css"/>
+    <link rel="stylesheet" href="./../styles.css"/>    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+  />
+  <link rel="stylesheet" href="./../style.css" />
 </head>
 <body>
 
-    <div class="menu_bar">
-        <table>
-          <tr>
-            <th class="menu_cells">
-              <a href="./../index.html">
-                <img src="./../poze/acasa.png" alt="Acasă" /> Acasă
-              </a>
-            </th>
-  
-            <th class="menu_cells">
-              <a href="./../artisti.html"> Artiști </a>
-            </th>
-  
-            <th class="menu_cells">
-              <div class="iframe-container">
-                <iframe 
-                  class="search-bar-iframe" 
-                  src="./../cauta.html" 
-                  scrolling="no">
-                </iframe>
+  <script src="./../search_bar_logic.js"></script>
+
+  <div class="menu_bar">
+    <table>
+      <tr>
+        <th class="menu_cells">
+          <a href="./../index.html">
+            <img src="./../poze/acasa.png" alt="Acasă" /> Acasă
+          </a>
+        </th>
+
+        <th class="menu_cells">
+          <a href="./../artisti.html"> Artiști </a>
+        </th>
+
+        <th class="menu_cells">
+          <div class="iframe-container">
+            <form>
+              <div class="search-wrapper">
+                <div class="search">
+                  <span class="material-symbols-outlined">search</span>
+                  <div class="input-wrapper">
+                    <input
+                      class="search-input"
+                      id="searches-input"
+                      type="search"
+                      onclick="cauta(''+document.getElementById('searches-input').value)"
+                      placeholder="Căutare"
+                      autocomplete="off"
+                    />
+                    <div class="suggestions-wrap">
+                      <ul class="suggestions">
+                        <!-- Suggestii generate -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </th>
-          </tr>
-        </table>
-      </div>
+            </form>
+          </div>
+        </th>
+      </tr>
+    </table>
+  </div>
       
     <img width="20%" src="./../poze/nicufanica.jpg" style="float: right; margin-left: 5px; margin-bottom: 5px;">
     <p class="titlu";> Nicu Fănică (5 aprilie 1984 - 26 octombrie 1968) </p>
     <p class="text";> Pe numele adevărat Iordache Luca Ștefan, a fost un 
         naist maestru, vocalist și șef de orchestră rom din România. Este 
         considerat unul dintre cei mai talentați naiști din toate timpurile, 
-        fiind apreciat de compozitorul George Enescu drept „cel mai bun suflător 
-        pe care l-am auzit până azi. </p>
+        fiind apreciat de compozitorul George Enescu drept "cel mai bun suflător 
+        pe care l-am auzit până azi". </p>
     <p class="subtitlu";> Copilăria și parcursul în muzică </p>
-    <p class="text";> Tatăl său era lăutar, cânta la nai și flaut. Fănica Luca s-a apucat de lăutărie 
+    <p class="text";> Tatăl său era lăutar, cânta la nai și flaut. Fănică Luca s-a apucat de lăutărie 
         de la o vârstă frageda date fiind condițiile grele de viață. Primul nai l-a primit 
-        de la tatăl său. Fanica Luca a abordat genurile de muzica lăutărească (vocală), 
+        de la tatăl său. Fănică Luca a abordat genurile de muzica lăutărească (vocală), 
         populară, café-concert și romanțe. La 13 ani cântă într-un taraf cu un lăutar numit 
         Lache din Găești. În 1910 a plecat din țară în Zmirna, apoi în Istanbul. S-a întors 
-        în țară unde a cântat la restaurantul Suzana. Fanica Luca a cântat între anii 1920-1929 
+        în țară unde a cântat la restaurantul Suzana. Fănică Luca a cântat între anii 1920-1929 
         la diverse restaurante bucureștene și a început colaborarea la radio în anul 1929, dar 
-        a plecat la Varșovia alături de orchestra “Ciolac”. </p>
+        a plecat la Varșovia alături de orchestra "Ciolac". </p>
     <p class="subtitlu";> Merite </p>
-    <p class="text";> În 1937 printr-o colaborare cu Grigoraș Dinicu și orchestra sa a plecat la Paris. 
-        În urma succeselor obținute, Fanica Luca a fost decorat de Ministerul Educației 
-        Naționale Franceze cu Ordinul “Palmes” al Academiei Franceze, în gradul de ofițer. 
+    <p class="text";> În 1937, printr-o colaborare cu <a href="./grigoras dinicu.html">Grigoraș Dinicu</a> și orchestra sa a plecat la Paris. 
+        În urma succeselor obținute, Fănică Luca a fost decorat de Ministerul Educației 
+        Naționale Franceze cu Ordinul "Palmes" al Academiei Franceze, în gradul de ofițer. 
         A primit Diploma de Onoare Clasa I cu Medalia de Aur. </p>
     <p class="subtitlu";> Sfârșitul carierei </p>
     <p class="text";> A rămas în Paris ca angajat al teatrului Chatelet unde s-a bucurat de un mare succes. 
         Fănică Luca era foarte apreciat la Paris, fiind respectat de presa vremii. În anul 1938 
         a plecat la Londra unde a fost angajat la teatrul Palladium. La scurt timp a mers și la 
         Expoziția internațională de la New York la cererea expresă a doamnei Roosvelt. La începutul 
-        războiului Fanica Luca a revenit în țară, unde a susținut concerte pentru militarii de pe 
+        războiului, Fănică Luca a revenit în țară, unde a susținut concerte pentru militarii de pe 
         front și pentru cei din spitale. În era comunistă a cântat în țările sovietice europene, în 
-        China și Coreea. Fanica Luca a fost și un pasionat profesor de nai la școala nr. 1 din București, 
+        China și Coreea. Fănică Luca a fost și un pasionat profesor de nai la școala nr. 1 din București, 
         unde în 1949 a înființat prima catedră de nai din România. </p>
     <p class="subtitlu";> Decesul </p>
     <p class="text";> Luca Fănică a murit la vârsta de 74 de ani, în București. </p>

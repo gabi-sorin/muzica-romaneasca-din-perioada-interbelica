@@ -1,7 +1,7 @@
-const nume_artisti = [
+const nume_artisti1 = [
     "Alfred Alessandrescu",
     "Alla Baianova",
-    "Constantin C. Nottara",
+    "C. Constantin Nottara",
     "Cristian Vasile",
     "Dimitrie Cuclin",
     "Dorel Livianu",
@@ -35,28 +35,79 @@ const nume_artisti = [
     "Zavaidoc",
   ];
 
-//<div class="letter-group">
-//   <div class="letter">A</div>
-//   <ul class="names">
-//       <li>Alex</li>
-//       <li>Andrew</li>
-//       <li>Anna</li>
-//       <li>12345678901234567890</li>
-//   </ul>
-// </div>
+  var artisti_sortati;
+  artisti_sortati = [];
 
+  function sort(lista_nume){
+    let lista_sortata = [];
+    var urmt_nume;
+    for( let i = 0 ; i < lista_nume.length ; i++)
+    {
+        urmt_nume = '÷';
+        for( let j = 0 ; j < lista_nume.length ; j++)
+        {
+            if(lista_sortata.includes(lista_nume[j]) === false && compara(urmt_nume,lista_nume[j])===lista_nume[j]){
+                urmt_nume = lista_nume[j];
+            }
+        }
+        lista_sortata.push(urmt_nume);
+    }
+    return lista_sortata;
+  }
+
+  function compara(a,b){
+    let min = a.length;
+    if(b.length < a.length)
+        min = b.length;
+    for(let i = 0; i < min ; i++)
+    {
+        if(a[i]<b[i])
+            return a;
+        else if(b[i]<a[i])
+            return b;
+    }
+    if(a.length>b.length)
+        return b;
+    else 
+        return a;
+  }
+
+  function gaseste_nume_corect(nume){
+    let nume_familie_posibil = '';
+    let restul_numelui = '';
+    for( let i = 0; i < nume.length ; i++ )
+    {
+        if(nume[i]===' ')
+        {
+            restul_numelui +=' ' + nume_familie_posibil;
+            nume_familie_posibil = '';
+        }
+        else
+        nume_familie_posibil += nume[i];
+    }
+    return nume_familie_posibil + restul_numelui;
+  }
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    let lista_nume_corecte = [];
+    for(let i = 0; i< nume_artisti1.length; i++)
+        {
+          lista_nume_corecte.push(gaseste_nume_corect(nume_artisti1[i]));
+        }
+    artisti_sortati = sort(lista_nume_corecte);
+
 
     let div = document.getElementsByClassName("container")[0];
     let ult_litera = "?"
     var ul;
-    for(let i=0;i<nume_artisti.length;i++)
+    for(let i=0;i<artisti_sortati.length;i++)
     {
-        if(ult_litera===nume_artisti[i][0])
+        if(ult_litera===artisti_sortati[i][0])
         {
             let li = document.createElement("li");
-            li.textContent = nume_artisti[i];
+            li.textContent = artisti_sortati[i];
+            li.setAttribute("class","names_li");
             add_click_listener(li);
             ul.appendChild(li);
         }
@@ -64,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             let new_group = document.createElement("div");
             new_group.setAttribute("class","letter-group");
-            ult_litera = nume_artisti[i][0];
+            ult_litera = artisti_sortati[i][0];
             ul = document.createElement("ul");
             ul.setAttribute("class","names");
             let litera = document.createElement("div");
@@ -75,7 +126,8 @@ document.addEventListener("DOMContentLoaded", function () {
             new_group.appendChild(ul);
 
             let li = document.createElement("li");
-            li.textContent = nume_artisti[i];
+            li.textContent = artisti_sortati[i];
+            li.setAttribute("class","names_li");
             add_click_listener(li);
             ul.appendChild(li);
             div.appendChild(new_group);
@@ -86,8 +138,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function add_click_listener(obj){
     obj.addEventListener("click", function(){
-        trimite_userul_la_fisierul_selectat(obj.textContent);
+        trimite_userul_la_fisierul_selectat(specificare_corecta_a_fisierului(obj.textContent));
     })
+}
+
+function specificare_corecta_a_fisierului(nume){
+    var nume_fam = [];
+    for( let i = 0 ; nume[i]!==' ' && i<nume.length ; i++)
+    {
+        nume_fam += nume[i];
+    }
+    // daca e nevoie, adg si restul numelui
+
+    for( let i = 0; i < nume_artisti1.length ; i++)
+    {
+        if(nume_artisti1[i].includes(nume_fam) === true)
+            return nume_artisti1[i];
+    }
+
+
 }
 
 function trimite_userul_la_fisierul_selectat(valoare_input){

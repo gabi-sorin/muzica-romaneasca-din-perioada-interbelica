@@ -6,54 +6,78 @@
     <title>Document</title>
     <link rel="stylesheet" href="./../artisti_style.css" />
     <link rel="stylesheet" href="./../menu_bar.css"/>
+    <link rel="stylesheet" href="./../styles.css"/>    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+  />
+  <link rel="stylesheet" href="./../style.css" />
 </head>
 <body>
 
-    <div class="menu_bar">
-        <table>
-          <tr>
-            <th class="menu_cells">
-              <a href="./../index.html">
-                <img src="./../poze/acasa.png" alt="Acasă" /> Acasă
-              </a>
-            </th>
-  
-            <th class="menu_cells">
-              <a href="./../artisti.html"> Artiști </a>
-            </th>
-  
-            <th class="menu_cells">
-              <div class="iframe-container">
-                <iframe 
-                  class="search-bar-iframe" 
-                  src="./../cauta.html" 
-                  scrolling="no">
-                </iframe>
+  <script src="./../search_bar_logic.js"></script>
+
+  <div class="menu_bar">
+    <table>
+      <tr>
+        <th class="menu_cells">
+          <a href="./../index.html">
+            <img src="./../poze/acasa.png" alt="Acasă" /> Acasă
+          </a>
+        </th>
+
+        <th class="menu_cells">
+          <a href="./../artisti.html"> Artiști </a>
+        </th>
+
+        <th class="menu_cells">
+          <div class="iframe-container">
+            <form>
+              <div class="search-wrapper">
+                <div class="search">
+                  <span class="material-symbols-outlined">search</span>
+                  <div class="input-wrapper">
+                    <input
+                      class="search-input"
+                      id="searches-input"
+                      type="search"
+                      onclick="cauta(''+document.getElementById('searches-input').value)"
+                      placeholder="Căutare"
+                      autocomplete="off"
+                    />
+                    <div class="suggestions-wrap">
+                      <ul class="suggestions">
+                        <!-- Suggestii generate -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </th>
-          </tr>
-        </table>
-      </div>
+            </form>
+          </div>
+        </th>
+      </tr>
+    </table>
+  </div>
       
     <img width="20%" src="./../poze/grigorasdinicu.jpeg" style="float: right; margin-left: 5px; margin-bottom: 5px;">
     <p class="titlu";> Grigoraș Dinicu (3 aprilie 1889 - 28 martie 1949) </p>
     <p class="porecla";> King of the gypsy players and his band </p>
-    <p class="text";>A fost un compozitor și violonist român dar de origine romă. S-a remarcat prin talentul său la vioară și compozițiile 
+    <p class="text";>A fost un compozitor și violonist român, dar de origine romă. S-a remarcat prin talentul său la vioară și compozițiile 
         sale printre care se numără și renumitele: "Hora mărțișorului", "Ceasornicul", "Hora spiccato" etc. </p>
     <p class="subtitlu";> Copilărie </p>
-    <p class="text";> Grigoraș Dinicu s-a născut în cartierul „Scaune” al lăutarilor bucureșteni unde a trăit de mic copil în atmosfera 
-        muzicii populare. Cronicile vremii descriau cartierul Scaune ca fiind „mahalaua situată la marginea 
+    <p class="text";> Grigoraș Dinicu s-a născut în cartierul "Scaune" al lăutarilor bucureșteni unde a trăit de mic copil în atmosfera 
+        muzicii populare. Cronicile vremii descriau cartierul Scaune ca fiind "mahalaua situată la marginea 
         orașului". Părinţii săi au fost Ionică Dinicu, un cunoscut lăutar aplaudat pe scenele din Bucureşti, Paris 
         sau Moscova, iar mama sa, Elena Dinicu, a fost fiica fostului celebru naist Angheluş Dinicu şi soră a 
         violoncelistului Dimitrie Dinicu. Era clar că tânărul Dinică va respecta moștenirea muzicală a familiei și o va duce 
         mai departe. Așadar, încă de mic îndrăgește vioara, iar un anumit Moș Zamfir lăutar bătrân, îl învață primele cântece. </p>
     <p class="subtitlu";> Carieră </p>
     <p class="text";> Nu se știe unde a studiat tânărul până la terminarea liceului, dar bazele culturii sale muzicale le-a pus la Conservator 
-        în București unde a intrat datorită pregătirii cu pedagogul Carl Flesch. În această perioadă începe să cânte la 
+        din București unde a intrat datorită pregătirii cu pedagogul Carl Flesch. În această perioadă începe să cânte la 
         fel de fel de evenimente de scară mică. După terminarea Conservatorului, începe să frecventeze localurile din București. 
         Este angajat șef de taraf la restaurantul "Bufet" unde cântă în fiecare seară. Continuă să cânte muzica sa clasică 
         sau populară, unele compuse de el însuși până la venirea Primului Război Mondial. În perioada Primului Război 
-        Mondial, a urmat modelul celui mai mare muzician român, George Enescu, şi a cântat în spitalele în care erau 
+        Mondial, a urmat modelul celui mai mare muzician român, <a href="./george enescu.html">George Enescu</a>, şi a cântat în spitalele în care erau 
         îngrijiţi răniţii din confruntare, alinându-le în parte suferinţele. Întrând oficial în perioada interbelică, acum 
         iscusitul și oarecum renumitul Grigoraș Dinicu participă alături de taraful său la numeroase turnee internaționale. 
         De aici Grigoraș Dinicu se lansează în țări străine. Cântă la: Londra, Paris, Viena etc. în toate aceste țări primind 
@@ -64,7 +88,9 @@
         intervenție chirurgicală. 
         În ziua de 23 aprilie 1947, Uniunea Sindicatelor de Artiști, Scriitori și Ziariști a organizat la Ateneul Român 
         un concert aniversar pentru împlinirea a 40 de ani de activitate a lui Grigoraș Dinicu. La acest concert au 
-        cântat: Maria Tănase, Ioana Radu, Rodica Bujor, Ion Luican etc. Dinicu a murit la data de 28 martie 1949 în București. </p>
+        cântat: <a href="./maria tanase.html">Maria Tănase</a>, <a href="./ioana radu.html">Ioana Radu</a>, 
+        <a href="./rodica bujor.html">Rodica Bujor</a>, <a href="./ion luican.html">Ion Luican</a> etc. Dinicu a murit la data 
+        de 28 martie 1949 în București. </p>
     
     </br>
 

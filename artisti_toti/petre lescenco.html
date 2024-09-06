@@ -6,38 +6,62 @@
     <title>Document</title>
     <link rel="stylesheet" href="./../artisti_style.css" />
     <link rel="stylesheet" href="./../menu_bar.css"/>
+    <link rel="stylesheet" href="./../styles.css"/>    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+  />
+  <link rel="stylesheet" href="./../style.css" />
 </head>
 <body>
 
-    <div class="menu_bar">
-        <table>
-          <tr>
-            <th class="menu_cells">
-              <a href="./../index.html">
-                <img src="./../poze/acasa.png" alt="Acasă" /> Acasă
-              </a>
-            </th>
-  
-            <th class="menu_cells">
-              <a href="./../artisti.html"> Artiști </a>
-            </th>
-  
-            <th class="menu_cells">
-              <div class="iframe-container">
-                <iframe 
-                  class="search-bar-iframe" 
-                  src="./../cauta.html" 
-                  scrolling="no">
-                </iframe>
+  <script src="./../search_bar_logic.js"></script>
+
+  <div class="menu_bar">
+    <table>
+      <tr>
+        <th class="menu_cells">
+          <a href="./../index.html">
+            <img src="./../poze/acasa.png" alt="Acasă" /> Acasă
+          </a>
+        </th>
+
+        <th class="menu_cells">
+          <a href="./../artisti.html"> Artiști </a>
+        </th>
+
+        <th class="menu_cells">
+          <div class="iframe-container">
+            <form>
+              <div class="search-wrapper">
+                <div class="search">
+                  <span class="material-symbols-outlined">search</span>
+                  <div class="input-wrapper">
+                    <input
+                      class="search-input"
+                      id="searches-input"
+                      type="search"
+                      onclick="cauta(''+document.getElementById('searches-input').value)"
+                      placeholder="Căutare"
+                      autocomplete="off"
+                    />
+                    <div class="suggestions-wrap">
+                      <ul class="suggestions">
+                        <!-- Suggestii generate -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </th>
-          </tr>
-        </table>
-      </div>
+            </form>
+          </div>
+        </th>
+      </tr>
+    </table>
+  </div>
       
     <img width="20%" src="./../poze/petrelescenco.jpg" style="float: right; margin-left: 5px; margin-bottom: 5px;">
     <p class="titlu";> Petre Leșcenco (2 iunie 1898 - 16 iulie 1954) </p>
-    <p class="text";> S-a născut în Isaevo , Imperiul Rus într-o familie extrem de săracă și a fost un 
+    <p class="text";> S-a născut în Isaevo, Imperiul Rus într-o familie extrem de săracă și a fost un 
         cântăreț de muzică ușoară. Fiind de origine rusă, a cântat aproape exclusiv în limba 
         rusă. A devenit cetățean român după alipirea Basarabiei de România în 1918. </p>
     <p class="subtitlu";> Copilăria </p>
@@ -45,13 +69,13 @@
         artistic al fiului său vitreg, i-a dăruit chitara sa. În perioada în care era elev, 
         Petre a reușit să învețe singur să cânte la chitară. </p>
     <p class="subtitlu";> Cariera </p>
-    <p class="text";> Având cetățenia română în calitate de locuitor al Basarabiei Leșcenco revine în România. 
+    <p class="text";> Având cetățenia română în calitate de locuitor al Basarabiei, Leșcenco revine în România. 
         Duce o viață grea având diferite activități ocazionale: tâmplar, dirijor de cor la catedrala 
         din Chișinău, ospătar și altele. A mai cântat la chitară în pauzele dintre spectalolele 
         cinematografelor "Orpheum" și "Suzana". Apoi intră în contact cu un grup de tineri de la 
         teatrul din Chișinău și este activ în promovarea noilor dansuri la modă, printre care și 
         Lezghinka care este dansat în pauzele de la cinematograful "Orpheum". Ulterior Petre Leșcenco 
-        face diferite turnee în orașele din Basarabia. În 1925 Petre Leșcenco pleacă la Paris, unde 
+        face diferite turnee în orașele din Basarabia. În 1925, Petre Leșcenco pleacă la Paris, unde 
         apare într-un spectacol muzical, cântând la balalaică. Petre Leșcenco formează cu Zinaida Zakit 
         un cuplu de dans care apare cu succes în diferite restaurante din Paris, alternând numerele de 
         dans cu diferite cântece. Fiind considerat un emigrant, muzica lui Petre Leșcenco era interzisă 

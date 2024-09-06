@@ -59,7 +59,10 @@ document.addEventListener("DOMContentLoaded", function () {
           break;
         case "Enter":
           event.preventDefault(); // foarte important, mi-am pierdut prea mult timp pentru o singura linie adaugata 
-          selectSuggestion(1);
+          if (activeElement.classList.contains("suggestions-li"))
+            selectSuggestion(0);
+          else
+            selectSuggestion(1);
           break;
         default:
           break;
@@ -67,21 +70,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   document.addEventListener("keyup", function (event) {
-    if (input && event.key != "Enter" && event.key != "ArrowDown" && event.key != "ArrowUp" ) {
+    let elemActiv = document.activeElement;
+    if (input===elemActiv && event.key != "Enter" && event.key != "ArrowDown" && event.key != "ArrowUp" ) {
       {
-        select_size(1);
         cauta(input.value);
       }
     }
-  });
-
-  parent.document.addEventListener("click", function () {
-    const activeElement = document.activeElement;
-    if(activeElement.className!=="search-input")
-      {
-        curatare_lista();
-        select_size(0);
-      }
   });
 
 
@@ -90,13 +84,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (activeElement && activeElement.classList.contains("suggestions-li")) {
         selectSuggestion(0);
     }
+    else if(activeElement.className!=="search-input")
+      {
+        curatare_lista();
+      }
   });
 
-  let ul = document.getElementsByClassName("suggestions-wrap")[0];
-
-  document.addEventListener("scroll",function(){
-
-  });
 
 });
 
@@ -158,7 +151,10 @@ function selectSuggestion(numar) {
 
 function trimite_userul_la_fisierul_selectat(valoare_input){
   valoare_input = valoare_input.toLowerCase();
-  window.parent.location.href = "./artisti_toti/"+valoare_input+".html";
+  if(window.location.href.includes('/artisti_toti'))
+    window.location.href = "./"+valoare_input+".html";
+  else
+    window.location.href = "./artisti_toti/"+valoare_input+".html";
 }
 
 function cauta(searchterm) {
@@ -242,13 +238,3 @@ function curatare_lista() {
   }
 }
 
-function grow_iframe(input)
-{
-  select_size(1);
-  cauta(input);
-}
-
-function select_size(nr){
-  if(window.parent.document.URL.includes("/artisti.html"))
-    window.parent.change(nr);
-}

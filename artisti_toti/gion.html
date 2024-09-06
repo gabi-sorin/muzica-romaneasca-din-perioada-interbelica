@@ -6,34 +6,58 @@
     <title>Document</title>
     <link rel="stylesheet" href="./../artisti_style.css" />
     <link rel="stylesheet" href="./../menu_bar.css"/>
+    <link rel="stylesheet" href="./../styles.css"/>    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+  />
+  <link rel="stylesheet" href="./../style.css" />
 </head>
 <body>
 
-    <div class="menu_bar">
-        <table>
-          <tr>
-            <th class="menu_cells">
-              <a href="./../index.html">
-                <img src="./../poze/acasa.png" alt="Acasă" /> Acasă
-              </a>
-            </th>
-  
-            <th class="menu_cells">
-              <a href="./../artisti.html"> Artiști </a>
-            </th>
-  
-            <th class="menu_cells">
-              <div class="iframe-container">
-                <iframe 
-                  class="search-bar-iframe" 
-                  src="./../cauta.html" 
-                  scrolling="no">
-                </iframe>
+  <script src="./../search_bar_logic.js"></script>
+
+  <div class="menu_bar">
+    <table>
+      <tr>
+        <th class="menu_cells">
+          <a href="./../index.html">
+            <img src="./../poze/acasa.png" alt="Acasă" /> Acasă
+          </a>
+        </th>
+
+        <th class="menu_cells">
+          <a href="./../artisti.html"> Artiști </a>
+        </th>
+
+        <th class="menu_cells">
+          <div class="iframe-container">
+            <form>
+              <div class="search-wrapper">
+                <div class="search">
+                  <span class="material-symbols-outlined">search</span>
+                  <div class="input-wrapper">
+                    <input
+                      class="search-input"
+                      id="searches-input"
+                      type="search"
+                      onclick="cauta(''+document.getElementById('searches-input').value)"
+                      placeholder="Căutare"
+                      autocomplete="off"
+                    />
+                    <div class="suggestions-wrap">
+                      <ul class="suggestions">
+                        <!-- Suggestii generate -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </th>
-          </tr>
-        </table>
-      </div>
+            </form>
+          </div>
+        </th>
+      </tr>
+    </table>
+  </div>
       
     <img width="20%" src="./../poze/gheorgheionescu.png" style="float: right; margin-left: 5px; margin-bottom: 5px;">
     <p class="titlu";> Gheorghe Ionescu (23 februarie 1909 - 17 octombrie 1999) </p>
@@ -44,13 +68,13 @@
         a leșinat. Tânărul ia impulsiv decizia de a-și vinde cărțile de medicină pentru a cumpăra un set de tobe și un frac,
         fără a le spune părinților. </p>
     <p class="subtitlu";> Cariera muzicală </p>
-    <p class="text";> În 1928, în secret faţă de familie, a reuşit să obţină un contract la „Răcaru”. Mama sa află după câteva săptămâni
+    <p class="text";> În 1928, în secret faţă de familie, a reuşit să obţină un contract la "Răcaru". Mama sa află după câteva săptămâni
         de ocupația fiului ei și după multe certuri acceptă că acesta este visul tânărului. Pseudonimul Gion îi este dat chiar
         de patronul localului "Răcaru" deoarece Gheorghe Ionescu era un nume ceva mai întâlnit în acea perioadă.
-        A cântat acolo aproximativ trei ani , timp în care chiar a devenit o adevărată celebritate a Bucureştiului.
-        Jean Moscopol îl acuză de mai multe ori prin interviuri că îi copiază stilul însă asta nu are un efect asupra carierei
+        A cântat acolo aproximativ trei ani, timp în care chiar a devenit o adevărată celebritate a Bucureştiului.
+        Jean Moscopol îl acuză de mai multe ori prin interviuri că îi copiază stilul, însă asta nu are un efect asupra carierei
         lui Gion. În perioada sa de glorie, Gion semnează cu casa de discuri Odeon. Primul disc cuprinde melodiile 
-        „Inima-i un telefon” și cântecul ce i-a adus consacrarea, „Vecina mea de vis-a-vis”. Alte melodii cunoscute ale 
+        "Inima-i un telefon" și cântecul ce i-a adus consacrarea, "Vecina mea de vis-a-vis". Alte melodii cunoscute ale 
         sale sunt: "Adio, doamnă!", "Nopți de argint", "Niura", "Beau!" și multe altele. </p>
     <p class="subtitlu";> Nedreptatea </p>
     <p class="text";> După perioada de succes din anii ’30, viața lui Gion a suferit schimbări semnificative odată cu intrarea 
@@ -58,8 +82,8 @@
         comuniștilor. Scapă din lagăre în 1955, dar este într-o condiție fizică foarte proastă (se spune că ar fi cântărit doar 45 de kilograme). </p>
     <p class="subtitlu";> Sfârșitul </p>
     <p class="text";> Își continuă, cu mai puțin succes, cariera muzicală prin cafenele și baruri până în 1979 când ia decizia de a căuta o viață
-        mai bună pentru el si familia sa în America. La New York, Gion a continuat să cânte în câteva restaurante 
-        românești, chiar dacă avea o vârstă înaintată. Sfârșește în anul 1999, la New York înconjurat de familia pe care a prețuit-o. </p>
+        mai bună pentru el și familia sa în America. La New York, Gion a continuat să cânte în câteva restaurante 
+        românești, chiar dacă avea o vârstă înaintată. Sfârșește în anul 1999, la New York, înconjurat de familia pe care a prețuit-o. </p>
     
     </br>
     <table cellspacing="80" class="center">

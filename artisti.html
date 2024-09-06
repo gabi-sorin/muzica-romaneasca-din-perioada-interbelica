@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Artiști Interbelici</title>
     <link rel="stylesheet" type="text/css" href="menu_bar.css" media="screen"/>
-    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="styles.css"/>    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+  />
+  <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <script src="generare_artisti.js"></script>
-    <script src="fix_iframe_size.js"></script>
+    <script src="search_bar_logic.js"></script>
     <div class="menu_bar">
       <table>
         <tr>
@@ -26,11 +30,28 @@
 
           <th class="menu_cells">
             <div class="iframe-container">
-              <iframe 
-                class="search-bar-iframe-mic" 
-                src="./cauta.html" 
-                scrolling="no">
-              </iframe>
+              <form>
+                <div class="search-wrapper">
+                  <div class="search">
+                    <span class="material-symbols-outlined">search</span>
+                    <div class="input-wrapper">
+                      <input
+                        class="search-input"
+                        id="searches-input"
+                        type="search"
+                        onclick="cauta(''+document.getElementById('searches-input').value)"
+                        placeholder="Căutare"
+                        autocomplete="off"
+                      />
+                      <div class="suggestions-wrap">
+                        <ul class="suggestions">
+                          <!-- Suggestii generate -->
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </div>
           </th>
         </tr>

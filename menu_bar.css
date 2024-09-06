@@ -82,6 +82,8 @@ a:link {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     overflow: visible; /* Allow overflow */
     max-height: 70px;
     min-width: 146px;
@@ -90,6 +92,11 @@ a:link {
     -khtml-user-select: none;
     -webkit-user-select: none;
     -o-user-select: none;
+  }
+
+  form{
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
 

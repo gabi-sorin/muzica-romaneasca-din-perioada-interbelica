@@ -63,7 +63,8 @@
 }
 
 .suggestions-a {
-    color: black;
+    font-size: 14px;
+    color: #333333;
     text-decoration: none;
     width: 100%;
     display: block;

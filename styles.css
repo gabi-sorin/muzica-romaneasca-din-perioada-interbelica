@@ -47,13 +47,17 @@ body{
     width: 100%;
 }
 
-.names li {
+.names_li {
     margin-top: 10px;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #dddddd;
     padding-top: 5px;
     font-size: 15.5px;
     color: #555;
     cursor: pointer;
+}
+
+.names_li:hover{
+    background-color: #d3d3d3;
 }
 
 @media (max-width: 860px) {

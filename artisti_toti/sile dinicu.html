@@ -6,51 +6,78 @@
     <title>Document</title>
     <link rel="stylesheet" href="./../artisti_style.css" />
     <link rel="stylesheet" href="./../menu_bar.css"/>
+    <link rel="stylesheet" href="./../styles.css"/>    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+  />
+  <link rel="stylesheet" href="./../style.css" />
 </head>
 <body>
 
-    <div class="menu_bar">
-        <table>
-          <tr>
-            <th class="menu_cells">
-              <a href="./../index.html">
-                <img src="./../poze/acasa.png" alt="Acasă" /> Acasă
-              </a>
-            </th>
-  
-            <th class="menu_cells">
-              <a href="./../artisti.html"> Artiști </a>
-            </th>
-  
-            <th class="menu_cells">
-              <div class="iframe-container">
-                <iframe 
-                  class="search-bar-iframe" 
-                  src="./../cauta.html" 
-                  scrolling="no">
-                </iframe>
+  <script src="./../search_bar_logic.js"></script>
+
+  <div class="menu_bar">
+    <table>
+      <tr>
+        <th class="menu_cells">
+          <a href="./../index.html">
+            <img src="./../poze/acasa.png" alt="Acasă" /> Acasă
+          </a>
+        </th>
+
+        <th class="menu_cells">
+          <a href="./../artisti.html"> Artiști </a>
+        </th>
+
+        <th class="menu_cells">
+          <div class="iframe-container">
+            <form>
+              <div class="search-wrapper">
+                <div class="search">
+                  <span class="material-symbols-outlined">search</span>
+                  <div class="input-wrapper">
+                    <input
+                      class="search-input"
+                      id="searches-input"
+                      type="search"
+                      onclick="cauta(''+document.getElementById('searches-input').value)"
+                      placeholder="Căutare"
+                      autocomplete="off"
+                    />
+                    <div class="suggestions-wrap">
+                      <ul class="suggestions">
+                        <!-- Suggestii generate -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </th>
-          </tr>
-        </table>
-      </div>
+            </form>
+          </div>
+        </th>
+      </tr>
+    </table>
+  </div>
       
     <img width="20%" src="./../poze/siledinicu.jpeg" style="float: right; margin-left: 5px; margin-bottom: 5px;">
     <p class="titlu";> Sile Dinicu (10 decembrie 1919 Bacău - 7 ianuarie 1993) </p>
     <p class="text";> A fost un compozitor, dirijor și talentat pianist cunoscut pentru colaborarea cu orchestrele de estradă ale 
-        Radioteleviziunii Române. A fost fiul nelegitim al lui Vasile Dinicu, unul dintre frații lui Grigoraș Dinicu. 
+        Radioteleviziunii Române. A fost fiul nelegitim al lui Vasile Dinicu, unul dintre frații 
+        lui <a href="./grigoras dinicu.html">Grigoraș Dinicu</a>. 
         Acesta l-a și adoptat, pentru că tatăl său natural nu avea posibilitatea să mai crească și alți copii. </p>
     <p class="subtitlu";> Educație </p>
     <p class="text";> Sile Dinicu a urmat studiile muzicale la Galați cu Theodor Fucs (pian) și la Conservatorul „Lyra” din Brăila 
         (1929-1930). 
         Se mută la București unde începe să lucreze. După debutul dîn 1936, la radio, cu pianistul Theodor Sibiceanu, și-a 
         desfășurat activitatea de pianist în diverse formații de muzică ușoară din București. Fiind încă prea tânăr, nu se remarcă 
-        în perioada interbelică prea mult.  Între 1941 și 1943 a fost cooptat de Constantin Tănase în orchestra teatrului 
-        Cărăbuș iar din 1943 până în 1947 a condus orchestra Teatrului „Gioconda”, ca secund al lui Ion Vasilescu. 
+        în perioada interbelică prea mult.  Între 1941 și 1943 a fost cooptat de Constantin Tănase în orchestra Teatrului 
+        "Cărăbuș" iar din 1943 până în 1947 a condus orchestra Teatrului "Gioconda", ca secund 
+        al lui <a href="./ion vasilescu.html">Ion Vasilescu</a>. 
         A avut o carieră mai lungă decât mulți artiști ai vremii. Ca dirijor de estradă a realizat numeroase turnee în 
         Israel, Franța, Germania și în țările socialiste de după Al Doilea Război Mondial.  A făcut parte din jurii naționale 
         și internaționale de concursuri muzicale (R.D. Germană). 
-        A compus peste 100 de melodii de muzică ușoară, printre care: „București, București”, „Întotdeauna marea”, „Nu mă certa” etc. </p>
+        A compus peste 100 de melodii de muzică ușoară, printre care: "București, București", "Întotdeauna marea", 
+        "Nu mă certa" etc. </p>
     <p class="subtitlu";> Distincții </p>
     <p class="text";> A fost distins cu Ordinul Muncii, clasa III (1956), cu premii de interpretare (1964, 1965) și mențiune de 
         creație (1965) la Festivalurile de muzică ușoară de la Mamaia, cu Ordinele „Meritul cultural”  clasa V (1968) și 
