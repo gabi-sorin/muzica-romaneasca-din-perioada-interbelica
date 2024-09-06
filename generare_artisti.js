@@ -143,16 +143,24 @@ function add_click_listener(obj){
 }
 
 function specificare_corecta_a_fisierului(nume){
-    var nume_fam = [];
-    for( let i = 0 ; nume[i]!==' ' && i<nume.length ; i++)
+    var nume_fam = '';
+    var i;
+    for( i = 0 ; nume[i]!==' ' && i<nume.length ; i++)
     {
         nume_fam += nume[i];
     }
-    // daca e nevoie, adg si restul numelui
+
+    let restul_nume = '';
+    for( i++ ; i < nume.length ; i++)
+    {
+        restul_nume += nume[i];
+    }
+    if(restul_nume !== '')
+        restul_nume +=' ';
 
     for( let i = 0; i < nume_artisti1.length ; i++)
     {
-        if(nume_artisti1[i].includes(nume_fam) === true)
+        if(nume_artisti1[i] === restul_nume+nume_fam)
             return nume_artisti1[i];
     }
 

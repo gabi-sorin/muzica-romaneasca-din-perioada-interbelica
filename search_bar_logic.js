@@ -150,6 +150,8 @@ function selectSuggestion(numar) {
 }
 
 function trimite_userul_la_fisierul_selectat(valoare_input){
+  if(valoare_input === undefined)
+    return;
   valoare_input = valoare_input.toLowerCase();
   if(window.location.href.includes('/artisti_toti'))
     window.location.href = "./"+valoare_input+".html";
