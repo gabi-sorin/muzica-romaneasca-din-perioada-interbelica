@@ -1,3 +1,8 @@
+:root{
+    --letter_color: #5c481a;
+}
+
+
 body{
     background-color: #ffffff;
 }
@@ -35,7 +40,7 @@ body{
 .letter {
     font-size: 40px;
     margin-bottom: 10px;
-    color: #007BFF;
+    color: var(--letter_color);
     font-weight: bold;
 }
 
@@ -43,22 +48,26 @@ body{
     list-style-type: none;
     padding: 0;
     margin: 0;
-    border-top: 2px solid #007BFF;
+    border-top: 2px solid var(--letter_color);
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .names_li {
-    margin-top: 10px;
+    padding-bottom: 7px;
+    padding-top: 7px;
     border-top: 1px solid #dddddd;
-    padding-top: 5px;
     font-size: 15.5px;
     color: #555;
     cursor: pointer;
 }
 
 .names_li:hover{
-    background-color: #d3d3d3;
+    background-color: #d6d6d6;
 }
+
 
 @media (max-width: 860px) {
     .container{

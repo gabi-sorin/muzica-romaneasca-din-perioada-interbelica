@@ -1,7 +1,18 @@
+.container_titlu{
+    width: calc(80% - 10px);
+    text-align: center;
+    height: fit-content;
+    margin: 0;
+    border: 0;
+    padding: 0;
+} 
+
 .titlu {
     font-family: Verdana, Geneva, Tahoma, sans-serif, Times New Roman;
     font-size: 24px;
     font-weight: bold;
+    margin: 30px;
+    margin-top: 5px;
 }
 .porecla {
     font-family: Verdana, Geneva, Tahoma, sans-serif, Times New Roman;
@@ -11,6 +22,8 @@
 .subtitlu {
     font-family: Verdana, Geneva, Tahoma, sans-serif, Times New Roman;
     font-size: 22px;
+    text-indent: 15px;
+    font-weight: 270;
 }
 .text {
     font-family: Verdana, Geneva, Tahoma, sans-serif, Times New Roman;
@@ -48,10 +61,20 @@ td{
     vertical-align: middle;
 }
 
-iframe {
-    width: 25vw;
-}
-
 table{
     table-layout: fixed;
+}
+
+
+@media ( max-width: 450px ){
+    .titlu{
+        font-size: 5.33333vw ; /* ==24px  */
+    }
+}
+
+
+@media (max-width: 320px){
+    .titlu{
+        margin: 20px;
+    }
 }

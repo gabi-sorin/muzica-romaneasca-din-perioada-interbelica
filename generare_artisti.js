@@ -1,7 +1,7 @@
 const nume_artisti1 = [
     "Alfred Alessandrescu",
     "Alla Baianova",
-    "C. Constantin Nottara",
+    "Constantin C. Nottara",
     "Cristian Vasile",
     "Dimitrie Cuclin",
     "Dorel Livianu",
@@ -75,6 +75,8 @@ const nume_artisti1 = [
   function gaseste_nume_corect(nume){
     let nume_familie_posibil = '';
     let restul_numelui = '';
+    if(nume === "Constantin C. Nottara")
+        return "Nottara C. Constantin";
     for( let i = 0; i < nume.length ; i++ )
     {
         if(nume[i]===' ')
@@ -145,7 +147,7 @@ function add_click_listener(obj){
 function specificare_corecta_a_fisierului(nume){
     var nume_fam = '';
     var i;
-    for( i = 0 ; nume[i]!==' ' && i<nume.length ; i++)
+    for( i = 0 ; nume[i]!==' ' && i<nume.length; i++)
     {
         nume_fam += nume[i];
     }
@@ -160,11 +162,52 @@ function specificare_corecta_a_fisierului(nume){
 
     for( let i = 0; i < nume_artisti1.length ; i++)
     {
-        if(nume_artisti1[i] === restul_nume+nume_fam)
+        if(has_the_same_words(nume_artisti1[i],restul_nume+nume_fam))
             return nume_artisti1[i];
     }
 
 
+}
+
+function has_the_same_words(a,b){
+    var word;
+    word = "";
+    for( let i = 0 ; i < a.length ; i++)
+    {
+        if(a[i]==' ')
+        {
+            if(cauta_cuvant_in_b(word,b) === false)
+                return false;
+            word = "";
+        }
+        else
+        word += a[i];
+    }
+    if(cauta_cuvant_in_b(word,b) === false)
+        return false;
+    else
+        return true;
+}
+
+function cauta_cuvant_in_b(cuvant,b){
+    var i;
+    var cuvant_nou;
+    cuvant_nou = "";
+    for( i = 0 ; i < b.length ; i++ )
+    {
+        if(b[i]===' ')
+        {
+            if(cuvant === cuvant_nou)
+                return true;
+            cuvant_nou = '';
+        }
+        else
+        cuvant_nou += b[i];
+    }
+    if(cuvant === cuvant_nou)
+        return true;
+    else 
+        return false;
 }
 
 function trimite_userul_la_fisierul_selectat(valoare_input){
