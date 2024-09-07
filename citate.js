@@ -39,7 +39,7 @@ const citate = [
 //de la cine, citatul propriuzis
 
 document.addEventListener("DOMContentLoaded",function(){
-    const area = document.getElementsByClassName("writable_space")[0];
+    const area = document.getElementsByClassName("main_container")[0];
     var p;
     p = document.createElement('p');
     p.setAttribute("class","citat_citat");

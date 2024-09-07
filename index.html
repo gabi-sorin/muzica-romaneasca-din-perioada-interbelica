@@ -32,7 +32,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        z-index: 2;
+        z-index: 1;
       }
 
       .banner_home_page h1 {
@@ -145,11 +145,12 @@
       .cell_ {
         position: absolute;
         top: 0;
-        bottom: 3000px;
+        bottom: 0px;
         left: -1px;
         right: -3px;
         top: -3px;
-        height: 101%;
+        height: calc(100vh - 66px + 1px);
+        z-index: -1;
       }
 
       .cell_:nth-child(1){
@@ -171,8 +172,7 @@
         }
 
         .cell:nth-child(2) {
-          max-width: calc( 1300px * 0.9 );
-          width: 1170px;
+          width: calc( 1300px * 0.9 );
         }
       }
 
@@ -251,10 +251,17 @@
                   <h1>Musique du petit Paris</h1>
                 </div>
               </div>
-              <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-            </div>
-            <div> <!-- mai_multa_spatiere -->
-              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+              <!-- Pentru a avea mereu aceeasi pozitionare a urmatoarelor elemente in site, dublam div-ul de mai sus, dar "fara" a il afisa -->
+              <div class="container" style="position: inherit; z-index: -200;">
+                <div class="banner_home_page" style="z-index: inherit;">
+                  <img src="./poze/piata-unirii-1914-iasul-de-odinioara-laiasi.png" alt="Piata Unirii 1914">
+                  <h1>Musique du petit Paris</h1>
+                </div>
+              </div>
+
+              <div class="main_container">
+
+              </div>
             </div>
           </th>
           <th class="cell">
