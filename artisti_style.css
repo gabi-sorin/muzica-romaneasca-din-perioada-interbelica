@@ -50,6 +50,10 @@ p{
     margin-right: 5px;
 }
 
+iframe {
+    width: 25vw;
+}
+
 tr{
     flex: auto;
 }
