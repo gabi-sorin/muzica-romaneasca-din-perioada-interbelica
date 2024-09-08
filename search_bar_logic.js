@@ -38,9 +38,70 @@ const nume_artisti = [
 var sugestii;
 var numar_sugestii_adaugate = 0;
 
+var artisti_sortati;
+  artisti_sortati = [];
+
+  function sort(lista_nume){
+    let lista_sortata1 = [];
+    var urmt_nume;
+    for( let i = 0 ; i < lista_nume.length ; i++)
+    {
+        urmt_nume = '÷';
+        for( let j = 0 ; j < lista_nume.length ; j++)
+        {
+            if(lista_sortata1.includes(lista_nume[j]) === false && compara(urmt_nume,lista_nume[j])===lista_nume[j]){
+                urmt_nume = lista_nume[j];
+            }
+        }
+        lista_sortata1.push(urmt_nume);
+    }
+    return lista_sortata1;
+  }
+
+  function compara(a,b){
+    let min = a.length;
+    if(b.length < a.length)
+        min = b.length;
+    for(let i = 0; i < min ; i++)
+    {
+        if(a[i]<b[i])
+            return a;
+        else if(b[i]<a[i])
+            return b;
+    }
+    if(a.length>b.length)
+        return b;
+    else 
+        return a;
+  }
+
+  function gaseste_nume_corect(nume){
+    let nume_familie_posibil = '';
+    let restul_numelui = '';
+    if(nume === "Constantin C. Nottara")
+        return "Nottara C. Constantin";
+    for( let i = 0; i < nume.length ; i++ )
+    {
+        if(nume[i]===' ')
+        {
+            restul_numelui +=' ' + nume_familie_posibil;
+            nume_familie_posibil = '';
+        }
+        else
+        nume_familie_posibil += nume[i];
+    }
+    return nume_familie_posibil + restul_numelui;
+  }
+
 document.addEventListener("DOMContentLoaded", function () {
   const input = document.getElementById("searches-input");
 
+  let lista_nume_corecte = [];
+  for(let i = 0; i< nume_artisti.length; i++)
+      {
+        lista_nume_corecte.push(gaseste_nume_corect(nume_artisti[i]));
+      }
+  artisti_sortati = sort(lista_nume_corecte);
 
   document.addEventListener("keydown", function (event) {
     const activeElement = document.activeElement;
@@ -138,16 +199,84 @@ function selectSuggestion(numar) {
     if(li.textContent === undefined)
         return 0;
     else
-      trimite_userul_la_fisierul_selectat(inlocuieste_diacritice(li.textContent));
+      trimite_userul_la_fisierul_selectat(specificare_corecta_a_fisierului(li.textContent));
       curatare_lista();
   } else {
     const activeElement = document.activeElement;
     if (activeElement && activeElement.classList.contains("suggestions-li")) {
-      trimite_userul_la_fisierul_selectat(inlocuieste_diacritice(activeElement.textContent));
+      trimite_userul_la_fisierul_selectat(specificare_corecta_a_fisierului(activeElement.textContent));
       curatare_lista(); // Clear suggestions after selection
     }
   }
 }
+
+function specificare_corecta_a_fisierului(nume){
+  var nume_fam = '';
+  var i;
+  for( i = 0 ; nume[i]!==' ' && i<nume.length; i++)
+  {
+      nume_fam += nume[i];
+  }
+
+  let restul_nume = '';
+  for( i++ ; i < nume.length ; i++)
+  {
+      restul_nume += nume[i];
+  }
+  if(restul_nume !== '')
+      restul_nume +=' ';
+
+  for( let i = 0; i < nume_artisti.length ; i++)
+  {
+      if(has_the_same_words(nume_artisti[i],restul_nume+nume_fam))
+          return nume_artisti[i];
+  }
+
+
+}
+
+function has_the_same_words(a,b){
+  var word;
+  word = "";
+  for( let i = 0 ; i < a.length ; i++)
+  {
+      if(a[i]==' ')
+      {
+          if(cauta_cuvant_in_b(word,b) === false)
+              return false;
+          word = "";
+      }
+      else
+      word += a[i];
+  }
+  if(cauta_cuvant_in_b(word,b) === false)
+      return false;
+  else
+      return true;
+}
+
+function cauta_cuvant_in_b(cuvant,b){
+  var i;
+  var cuvant_nou;
+  cuvant_nou = "";
+  for( i = 0 ; i < b.length ; i++ )
+  {
+      if(b[i]===' ')
+      {
+          if(cuvant === cuvant_nou)
+              return true;
+          cuvant_nou = '';
+      }
+      else
+      cuvant_nou += b[i];
+  }
+  if(cuvant === cuvant_nou)
+      return true;
+  else 
+      return false;
+}
+
+
 
 function trimite_userul_la_fisierul_selectat(valoare_input){
   if(valoare_input === undefined)
@@ -168,10 +297,10 @@ function cauta(searchterm) {
   sugestii = [[], []];
   curatare_lista();
   numar_sugestii_adaugate = 0;
-  for (let i = 0; i < nume_artisti.length; i++) {
-    let rezultat = in_ce_lista_e_stringul(searchterm, nume_artisti[i]);
-    if (rezultat === 0) sugestii[0].push(nume_artisti[i]);
-    else if (rezultat === 1) sugestii[1].push(nume_artisti[i]);
+  for (let i = 0; i < artisti_sortati.length; i++) {
+    let rezultat = in_ce_lista_e_stringul(searchterm, artisti_sortati[i]);
+    if (rezultat === 0) sugestii[0].push(artisti_sortati[i]);
+    else if (rezultat === 1) sugestii[1].push(artisti_sortati[i]);
   }
   adauga_raspuns();
 }
