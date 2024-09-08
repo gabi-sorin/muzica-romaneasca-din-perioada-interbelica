@@ -1,70 +1,60 @@
-let scrollSpeed = 1667; // Pixels per second
-let isScrolling = false;
-let animationFrameId;
-let lastScrollTime = 0;
+var x;
+var scroll_amount;
 
 document.addEventListener("DOMContentLoaded", function () {
-    document.addEventListener("keydown", handleKeyDown);
-    document.addEventListener("keyup", handleKeyUp);
+    var search_bar_elements = [
+        document.getElementsByClassName('iframe-container')[0],
+        document.getElementsByClassName('search-wrapper')[0],
+        document.getElementsByClassName('search-input')[0],
+        document.getElementsByClassName('suggestions-wrap')[0],
+        document.getElementsByClassName('suggestions')[0],
+    ];
+    document.addEventListener("keydown", function (event) {
+        let activEl = document.activeElement;
+        if(search_bar_elements.includes(document.getElementsByClassName('suggestions-li')[0]) === false){
+            let li = document.getElementsByClassName('suggestions-li');
+            let a = document.getElementsByClassName('suggestions-a');
+            for(let i = 0 ; i < li.length ; i++)
+            {
+                search_bar_elements.push(li[i]);
+            }
+            for(let i = 0 ; i < a.length ; i++)
+            {
+                search_bar_elements.push(a[i]);
+            }
+
+        }
+
+        if (!search_bar_elements.includes(activEl)) {
+            switch (event.key) {
+                case "ArrowDown":
+                    event.preventDefault();
+                    set_variables();
+                    scroll_(1);  // Scroll down
+                    break;
+                case "ArrowUp":
+                    event.preventDefault();
+                    set_variables();
+                    scroll_(-1);  // Scroll up
+                    break;
+                default:
+                    break;
+            }
+        }
+    });
 });
 
-function handleKeyDown(event) {
-    if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA' || event.target.tagName === 'LI') {
-        return; // Don't scroll if focus is on input or textarea
-    }
-
-    if (!isScrolling) {
-        switch (event.key) {
-            case "ArrowUp":
-                event.preventDefault();
-                startScrolling(-1);
-                break;
-            case "ArrowDown":
-                event.preventDefault();
-                startScrolling(1);
-                break;
-        }
-    }
+function set_variables() {
+    x = window.scrollY;        // Current scroll position
+    scroll_amount = 10;        // Higher value for faster scrolling (adjust as needed)
 }
 
-function handleKeyUp(event) {
-    if (event.key === "ArrowUp" || event.key === "ArrowDown") {
-        event.preventDefault();
-        stopScrolling();
+function scroll_(dir) {
+    window.scrollBy({
+        left: 0,
+        top: dir * scroll_amount,
+        behavior: 'instant'
     }
+    );
 }
 
-function startScrolling(direction) {
-    isScrolling = true;
-    lastScrollTime = performance.now();
-    scrollStep(direction);
-}
-
-function scrollStep(direction) {
-    const currentTime = performance.now();
-    const deltaTime = (currentTime - lastScrollTime) / 1000; // Convert to seconds
-
-    if (deltaTime > 0) {
-        const scrollAmount = Math.round(direction * scrollSpeed * deltaTime);
-        window.scrollBy(0, scrollAmount);
-        lastScrollTime = currentTime;
-    }
-
-    if (isScrolling) {
-        animationFrameId = requestAnimationFrame(() => scrollStep(direction));
-    }
-}
-
-function stopScrolling() {
-    if (isScrolling) {
-        cancelAnimationFrame(animationFrameId);
-        isScrolling = false;
-    }
-}
-
-// Function to change scroll speed (can be called from console or other parts of your code)
-function setScrollSpeed(speed) {
-    scrollSpeed = speed;
-    console.log(`Scroll speed set to ${speed} pixels per second`);
-}
-//Stiu ca nu merge cum trebuie, dar imi bag piciorul
