@@ -32,7 +32,7 @@ const nume_artisti = [
   "Theodor Rogalski",
   "Tiberiu Brediceanu",
   "Titi Botez",
-  "Zavaidoc",
+  "Zavaidoc"
 ];
 // Sa se adauge toate numele in ordine alfabetica!!!
 var sugestii;
