@@ -82,6 +82,21 @@
         overflow-x: hidden;
       }
 
+      .titlu_main{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: left;
+        font-size: 3vw;
+        margin-left: min(30px, 5vw);
+      }
+
+      .body_main{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: left;
+        font-size: 1.6vw;
+        margin-left: min(15px, 2.5vw);
+        margin-right: min(15px, 2.5vw);
+      }
+      
       .content {
         display: flex;
         padding: 20px;
@@ -189,40 +204,6 @@
           width: 90%;
         }
       }
-
-      .citat_div {
-        width: 80vw; /* Use viewport width */
-        max-width: 1000px; /* Set a maximum width */
-        margin: 0 auto; /* Center the div */
-      }
-
-      .citat_container {
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
-      }
-
-      .citat_citat {
-        font-size: 2.5vw; /* Responsive font size */
-        line-height: 1.4;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-
-      .citat_persoana {
-        font-size: 2vw; /* Responsive font size */
-        text-align: right;
-        font-style: italic;
-      }
-
-      @media screen and (min-width: 1250px) {
-        .citat_citat {
-          font-size: 31.25px; /* 2.5vw of 1250px */
-        }
-        .citat_persoana {
-          font-size: 25px; /* 2vw of 1250px */
-        }
-      }
     </style>
   </head>
 
@@ -230,6 +211,14 @@
     <script src="./citate.js"></script>
     <script src="search_bar_logic.js"></script>
     <script src="./movement.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded",function(){
+        setTimeout(function(){
+          var element_div_citat = document.getElementsByClassName("main_container")[0];
+          element_div_citat.setAttribute("style","height:fit-content");
+        },5);
+      });
+    </script>
     <div class="menu_bar">
       <table>
         <tr>
@@ -298,14 +287,55 @@
               <div class="main_container">
                 <div class="citat_div">
                   <div class="citat_container">
-                    
                   </div>
                 </div>
 
+
+
+              </div>
+
               </div>
               <div class="spatiere">
-              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </br> </br> </br> </br> </br> </br> </br> </br> <br><br><br><br>
+                </div>
+                <p class="titlu_main"> Conservarea culturii </p>
+                <p class="body_main"> Cultura definește un popor, îi dă o identitate și continuitate. Importanța 
+                  ei nu trebuie trecută cu vederea. Într-un mod foarte concis, aici se află 
+                  scopul acestui site, combaterea uitării. </p>
+                <p class="titlu_main"> Istoria </p>
+                <p class="body_main"> O știință fără de care, indubitabil, omul nu s-ar putea dezvolta. Fiind o 
+                  unealtă atât de puternică, odată ajunsă în mâna unui conducător, ea poate 
+                  face ravagii. Manipularea istoriei poate distruge cultura unui popor, o 
+                  crimă fără egal. </br>
+                  Ce legătură au toate astea cu muzica interbelică? Ei bine, comunismul este 
+                  unul dintre principalele motive pentru care în ziua de astăzi rar întâlnești 
+                  un om care a auzit de Cristian Vasile, Maria Tănase, darămite un om care să 
+                  fi și ascultat
+                  lucrările acestor artiști. </p>
+                <p class="titlu_main"> Viețile marilor artiști interbelici </p>
+                <p class="body_main"> Au fost documentate pe acest site cu scopul de a aduce în vedere artiștii 
+                  pe care comuniștii au încercat din răsputeri să îi suprime. Unii au luptat, 
+                  alții s-au lăsat duși de soartă, însă cu toții au avut de suferit. </p>
+                <p class="titlu_main"> O Românie Mare </p>
+                <p class="body_main"> Perioada Interbelică a redefinit identiatea României, proaspăt unită sub 
+                  forma României Mari. Muzica a devenit un simbol al diversității contribuind 
+                  la dezvoltarea unei culturi distincte. Stilurile de muzica române, moldovenești, 
+                  rusești, maghiare se influențează una pe alta și definesc, în final, stilul românesc. </p>
+                <p class="titlu_main"> Cenzura </p>
+                <p class="body_main"> Odată cu instaurarea regimului comunist, statul a modelat media româneasca 
+                  pentru a promova ideile partidului prin cenzurarea artiștilor cu idei libere: 
+                  reprofilare forțată, extrădare, pușcărie, iar pentru cei care s-au conformat la 
+                  ideile partidului versurile erau controlate și modificate. Unii artiști au imigrat 
+                  în țările vestice pentru a exprima liber ideile anticomuniste, muzica aceea fiind 
+                  redescoperită după revoluție. </p>
+                  <p class="titlu_main"> Surse </p>
+                <p class="body_main"> 
+                <a href="https://www.romania-muzical.ro"> <i>www.romania-muzical.ro</i> </a> </br>
+                <a href="https://www.radioromaniacultural.ro"> <i>www.radioromaniacultural.ro</i> </a> </br>
+                <a href="https://www.adevarul.ro"> <i>www.adevarul.ro</i> </a> </br>
+                <a href="https://www.casedemuzicieni.ro"> <i>www.casedemuzicieni.ro</i> </a> </br>
+                <a href="https://www.wikipedia.org"> <i>www.wikipedia.org</i> </a> </br>
+                </p>
               </div>
               <!-- calibram la finat marimea partilor, br asta face -->
             </div>
