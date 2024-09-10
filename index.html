@@ -189,6 +189,40 @@
           width: 90%;
         }
       }
+
+      .citat_div {
+        width: 80vw; /* Use viewport width */
+        max-width: 1000px; /* Set a maximum width */
+        margin: 0 auto; /* Center the div */
+      }
+
+      .citat_container {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .citat_citat {
+        font-size: 2.5vw; /* Responsive font size */
+        line-height: 1.4;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .citat_persoana {
+        font-size: 2vw; /* Responsive font size */
+        text-align: right;
+        font-style: italic;
+      }
+
+      @media screen and (min-width: 1250px) {
+        .citat_citat {
+          font-size: 31.25px; /* 2.5vw of 1250px */
+        }
+        .citat_persoana {
+          font-size: 25px; /* 2vw of 1250px */
+        }
+      }
     </style>
   </head>
 
