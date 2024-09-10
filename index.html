@@ -85,16 +85,16 @@
       .titlu_main{
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         text-align: left;
-        font-size: 3vw;
-        margin-left: min(30px, 5vw);
+        font-size: 34px;
+        margin-left: 30px;
       }
 
       .body_main{
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         text-align: left;
-        font-size: 1.6vw;
-        margin-left: min(15px, 2.5vw);
-        margin-right: min(15px, 2.5vw);
+        font-size: 20px;
+        margin-left: 15px;
+        margin-right: 15px;
       }
       
       .content {
@@ -204,6 +204,18 @@
           width: 90%;
         }
       }
+
+      @media (max-width: 850px){
+        .titlu_main{
+          font-size: 4vw;
+          margin-left: 3.53vw;
+        }
+        .body_main{
+          font-size: 2.35vw;
+          margin-left: 1.765vw;
+          margin-right: 1.765vw;
+        }
+      }
     </style>
   </head>
 
@@ -212,11 +224,25 @@
     <script src="search_bar_logic.js"></script>
     <script src="./movement.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded",function(){
-        setTimeout(function(){
-          var element_div_citat = document.getElementsByClassName("main_container")[0];
-          element_div_citat.setAttribute("style","height:fit-content");
-        },5);
+      document.addEventListener("DOMContentLoaded", function() {
+        function adjustMainContainerHeight() {
+          var mainContainer = document.getElementsByClassName("main_container")[0];
+          var childDiv = mainContainer.firstElementChild;
+          
+          if (childDiv) {
+            var childHeight = childDiv.offsetHeight;
+            mainContainer.style.height = childHeight + "px";
+          }
+        }
+
+        // Initial adjustment
+        adjustMainContainerHeight();
+
+        // Adjust height after a short delay to ensure all content is loaded
+        setTimeout(adjustMainContainerHeight, 100);
+
+        // Adjust height on window resize
+        window.addEventListener("resize", adjustMainContainerHeight);
       });
     </script>
     <div class="menu_bar">
@@ -289,54 +315,46 @@
                   <div class="citat_container">
                   </div>
                 </div>
-
-
-
               </div>
 
-              </div>
-              <div class="spatiere">
-                </br> </br> </br> </br> </br> </br> </br> </br> <br><br><br><br>
-                </div>
-                <p class="titlu_main"> Conservarea culturii </p>
-                <p class="body_main"> Cultura definește un popor, îi dă o identitate și continuitate. Importanța 
-                  ei nu trebuie trecută cu vederea. Într-un mod foarte concis, aici se află 
-                  scopul acestui site, combaterea uitării. </p>
-                <p class="titlu_main"> Istoria </p>
-                <p class="body_main"> O știință fără de care, indubitabil, omul nu s-ar putea dezvolta. Fiind o 
-                  unealtă atât de puternică, odată ajunsă în mâna unui conducător, ea poate 
-                  face ravagii. Manipularea istoriei poate distruge cultura unui popor, o 
-                  crimă fără egal. </br>
-                  Ce legătură au toate astea cu muzica interbelică? Ei bine, comunismul este 
-                  unul dintre principalele motive pentru care în ziua de astăzi rar întâlnești 
-                  un om care a auzit de Cristian Vasile, Maria Tănase, darămite un om care să 
-                  fi și ascultat
-                  lucrările acestor artiști. </p>
-                <p class="titlu_main"> Viețile marilor artiști interbelici </p>
-                <p class="body_main"> Au fost documentate pe acest site cu scopul de a aduce în vedere artiștii 
-                  pe care comuniștii au încercat din răsputeri să îi suprime. Unii au luptat, 
-                  alții s-au lăsat duși de soartă, însă cu toții au avut de suferit. </p>
-                <p class="titlu_main"> O Românie Mare </p>
-                <p class="body_main"> Perioada Interbelică a redefinit identiatea României, proaspăt unită sub 
-                  forma României Mari. Muzica a devenit un simbol al diversității contribuind 
-                  la dezvoltarea unei culturi distincte. Stilurile de muzica române, moldovenești, 
-                  rusești, maghiare se influențează una pe alta și definesc, în final, stilul românesc. </p>
-                <p class="titlu_main"> Cenzura </p>
-                <p class="body_main"> Odată cu instaurarea regimului comunist, statul a modelat media româneasca 
-                  pentru a promova ideile partidului prin cenzurarea artiștilor cu idei libere: 
-                  reprofilare forțată, extrădare, pușcărie, iar pentru cei care s-au conformat la 
-                  ideile partidului versurile erau controlate și modificate. Unii artiști au imigrat 
-                  în țările vestice pentru a exprima liber ideile anticomuniste, muzica aceea fiind 
-                  redescoperită după revoluție. </p>
-                  <p class="titlu_main"> Surse </p>
-                <p class="body_main"> 
-                <a href="https://www.romania-muzical.ro"> <i>www.romania-muzical.ro</i> </a> </br>
-                <a href="https://www.radioromaniacultural.ro"> <i>www.radioromaniacultural.ro</i> </a> </br>
-                <a href="https://www.adevarul.ro"> <i>www.adevarul.ro</i> </a> </br>
-                <a href="https://www.casedemuzicieni.ro"> <i>www.casedemuzicieni.ro</i> </a> </br>
-                <a href="https://www.wikipedia.org"> <i>www.wikipedia.org</i> </a> </br>
-                </p>
-              </div>
+              <p class="titlu_main"> Conservarea culturii </p>
+              <p class="body_main"> Cultura definește un popor, îi dă o identitate și continuitate. Importanța 
+                ei nu trebuie trecută cu vederea. Într-un mod foarte concis, aici se află 
+                scopul acestui site, combaterea uitării. </p>
+              <p class="titlu_main"> Istoria </p>
+              <p class="body_main"> O știință fără de care, indubitabil, omul nu s-ar putea dezvolta. Fiind o 
+                unealtă atât de puternică, odată ajunsă în mâna unui conducător, ea poate 
+                face ravagii. Manipularea istoriei poate distruge cultura unui popor, o 
+                crimă fără egal. </br>
+                Ce legătură au toate astea cu muzica interbelică? Ei bine, comunismul este 
+                unul dintre principalele motive pentru care în ziua de astăzi rar întâlnești 
+                un om care a auzit de Cristian Vasile, Maria Tănase, darămite un om care să 
+                fi și ascultat
+                lucrările acestor artiști. </p>
+              <p class="titlu_main"> Viețile marilor artiști interbelici </p>
+              <p class="body_main"> Au fost documentate pe acest site cu scopul de a aduce în vedere artiștii 
+                pe care comuniștii au încercat din răsputeri să îi suprime. Unii au luptat, 
+                alții s-au lăsat duși de soartă, însă cu toții au avut de suferit. </p>
+              <p class="titlu_main"> O Românie Mare </p>
+              <p class="body_main"> Perioada Interbelică a redefinit identiatea României, proaspăt unită sub 
+                forma României Mari. Muzica a devenit un simbol al diversității contribuind 
+                la dezvoltarea unei culturi distincte. Stilurile de muzica române, moldovenești, 
+                rusești, maghiare se influențează una pe alta și definesc, în final, stilul românesc. </p>
+              <p class="titlu_main"> Cenzura </p>
+              <p class="body_main"> Odată cu instaurarea regimului comunist, statul a modelat media româneasca 
+                pentru a promova ideile partidului prin cenzurarea artiștilor cu idei libere: 
+                reprofilare forțată, extrădare, pușcărie, iar pentru cei care s-au conformat la 
+                ideile partidului versurile erau controlate și modificate. Unii artiști au imigrat 
+                în țările vestice pentru a exprima liber ideile anticomuniste, muzica aceea fiind 
+                redescoperită după revoluție. </p>
+                <p class="titlu_main"> Surse </p>
+              <p class="body_main"> 
+              <a href="https://www.romania-muzical.ro"> <i>www.romania-muzical.ro</i> </a> </br>
+              <a href="https://www.radioromaniacultural.ro"> <i>www.radioromaniacultural.ro</i> </a> </br>
+              <a href="https://www.adevarul.ro"> <i>www.adevarul.ro</i> </a> </br>
+              <a href="https://www.casedemuzicieni.ro"> <i>www.casedemuzicieni.ro</i> </a> </br>
+              <a href="https://www.wikipedia.org"> <i>www.wikipedia.org</i> </a> </br>
+              </p>
               <!-- calibram la finat marimea partilor, br asta face -->
             </div>
           </th>

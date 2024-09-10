@@ -7,13 +7,13 @@ const nume_artisti = [
   "Dorel Livianu",
   "Dumitru Kiriac",
   "Elena Zamora",
-  "Filip Lazar",
+  "Filip Lazăr",
   "George Enescu",
-  "George Sbarcea",
+  "George Sbârcea",
   "Gherase Dendrino",
-  "Gica Petrescu",
+  "Gică Petrescu",
   "Gion",
-  "Grigoras Dinicu",
+  "Grigoraș Dinicu",
   "Ioana Radu",
   "Ion Luican",
   "Ion Nonna Otescu",
@@ -21,12 +21,12 @@ const nume_artisti = [
   "Ionel Fernic",
   "Jean Moscopol",
   "Manole Stroici",
-  "Maria Tanase",
+  "Maria Tănase",
   "Mia Braia",
   "Nicolae Bretan",
-  "Nicu Fanica",
+  "Nicu Fănică",
   "Petre Alexandru",
-  "Petre Lescenco",
+  "Petre Leșcenco",
   "Rodica Bujor",
   "Sile Dinicu",
   "Theodor Rogalski",
@@ -282,6 +282,7 @@ function trimite_userul_la_fisierul_selectat(valoare_input){
   if(valoare_input === undefined)
     return;
   valoare_input = valoare_input.toLowerCase();
+  valoare_input = inlocuieste_diacritice(valoare_input);
   if(window.location.href.includes('/artisti_toti'))
     window.location.href = "./"+valoare_input+".html";
   else
@@ -351,11 +352,11 @@ function inlocuieste_diacritice(nume){
     if(nume[i] === 'ă' || nume[i] === 'â')
       nume_nou +=  'a';
     else if(nume[i] === 'î')
-      nume_nou.push('i');
+      nume_nou += 'i';
     else if(nume[i] ==='ț')
-      nume_nou.push('t');
+      nume_nou += 't';
     else if(nume[i] === 'ș')
-      nume_nou.push('s');
+      nume_nou += 's';
     else
       nume_nou += nume[i];
   }

@@ -5,7 +5,7 @@
 .citat_citat{
     float: right;
     margin-right: min(5vw, 60px);
-    font-size: 0.8vw;
+    font-size: 0.6vw;
     font-style: italic;
     margin-bottom: 1vw;
 }
@@ -14,7 +14,7 @@
     float: right;
     max-width: 60%;
     margin-right: min(9vw, 50px);
-    font-size: 0.8vw;
+    font-size: 0.6vw;
     font-style: italic;
     margin-top: 0;
     padding: 0;
