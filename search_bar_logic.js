@@ -2,7 +2,6 @@ const nume_artisti = [
   "Alfred Alessandrescu",
   "Alla Baianova",
   "Constantin C. Nottara",
-  "Constantin Tănase",
   "Cristian Vasile",
   "Dimitrie Cuclin",
   "Dorel Livianu",
