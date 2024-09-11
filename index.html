@@ -258,8 +258,7 @@
     <script src="search_bar_logic.js"></script>
     <script src="./movement.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        function adjustMainContainerHeight() {
+              function adjustMainContainerHeight() {
           var mainContainer = document.getElementsByClassName("main_container")[0];
           var childDiv = mainContainer.firstElementChild;
           
@@ -302,7 +301,7 @@
   }
 }
 
-        // Initial adjustments
+      document.addEventListener("DOMContentLoaded", function() {
         adjustMainContainerHeight();
         adjustFooterSize();
         adjustgradientSize();
@@ -312,7 +311,7 @@
           adjustMainContainerHeight();
           adjustFooterSize();
           adjustgradientSize();
-        }, 100);
+        }, 50);
 
         // Adjust height and footer size on window resize
         window.addEventListener("resize", function() {
