@@ -80,6 +80,7 @@
         padding: 0;
         background-color: #f5f5f5;
         overflow-x: hidden;
+        z-index: -5;
       }
 
       .titlu_main{
@@ -146,8 +147,35 @@
 
       .the_whole_site{
         width: 100%;
-        height: 100%;
+        height: max(100%,100vh);
         border: none;
+      }
+
+      .footer{
+        width: 100%;
+        background-color: #5c481a;
+        z-index: -3;
+        min-height: 20vh;
+        margin: auto;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        height: 100%;
+        width: 100%;
+      }
+
+      .footer-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding: 10px;
+        font-size: 1.5vw;
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
       .cell {
@@ -161,12 +189,12 @@
       .cell_ {
         position: absolute;
         top: 0;
-        bottom: 0px;
+        bottom: 0;
         left: -1px;
         right: -3px;
         top: -3px;
-        height: max(101%, calc(100vh - 66px + 3px) );
-        z-index: -1;
+        height: calc(100% + 66px - 3px);
+        z-index: -4;
       }
 
       .cell_:nth-child(1){
@@ -205,6 +233,12 @@
         }
       }
 
+      @media (max-height: 100vh) {
+        .cell_ {
+          height: calc(100vh + var(--footer_height));
+        }
+      }
+
       @media (max-width: 850px){
         .titlu_main{
           font-size: 4vw;
@@ -235,14 +269,57 @@
           }
         }
 
-        // Initial adjustment
+        function adjustFooterSize() {
+          var footer = document.getElementsByClassName('footer')[0];
+          var wholeSite = document.getElementsByClassName('the_whole_site')[0];
+          var writable_space = document.getElementsByClassName('writable_space')[0];
+          
+          if (footer && wholeSite && writable_space) {
+            var windowHeight = window.innerHeight;
+            var wholeSiteHeight = wholeSite.offsetHeight;
+            var minFooterHeight = Math.max(windowHeight * 0.1, windowHeight - 66 - wholeSiteHeight);
+            var writable_space_width = writable_space.offsetWidth;
+            
+            footer.style.height = minFooterHeight + 'px';
+            footer.style.width = writable_space_width + 'px';
+          }
+        }
+
+        function adjustgradientSize() {
+  var footer = document.getElementsByClassName('footer')[0];
+  var gradients = document.getElementsByClassName('cell_');
+  var writable_space = document.getElementsByClassName('the_whole_site')[0];
+  
+  if (footer && gradients.length && writable_space) {
+    var writableSpaceHeight = writable_space.offsetHeight;
+    var footerHeight = footer.offsetHeight;
+    var _24_ = 24*window.height/window.height;
+    var totalHeight = writableSpaceHeight + footerHeight + 2;
+    
+    for (var i = 0; i < gradients.length; i++) {
+      gradients[i].style.height = totalHeight + 'px';
+    }
+  }
+}
+
+        // Initial adjustments
         adjustMainContainerHeight();
+        adjustFooterSize();
+        adjustgradientSize();
 
         // Adjust height after a short delay to ensure all content is loaded
-        setTimeout(adjustMainContainerHeight, 100);
+        setTimeout(function() {
+          adjustMainContainerHeight();
+          adjustFooterSize();
+          adjustgradientSize();
+        }, 100);
 
-        // Adjust height on window resize
-        window.addEventListener("resize", adjustMainContainerHeight);
+        // Adjust height and footer size on window resize
+        window.addEventListener("resize", function() {
+          adjustMainContainerHeight();
+          adjustFooterSize();
+          adjustgradientSize();
+        });
       });
     </script>
     <div class="menu_bar">
@@ -288,11 +365,12 @@
       </table>
     </div>
 
+
     <div class="the_whole_site">
       <table style="border: none;">
         <tr>
           <th class="cell">
-            <div class="cell_"></div>
+            <div class="cell_" style="background: linear-gradient(to right, #302a00a5,rgba(133, 117, 0, 0.647));"></div>
           </th>
           <th class="cell">
             <div class="writable_space">
@@ -348,15 +426,16 @@
                 în țările vestice pentru a exprima liber ideile anticomuniste, muzica aceea fiind 
                 redescoperită după revoluție. </p>
                 <p class="titlu_main"> Surse </p>
-              <p class="body_main"> 
+              <p class="body_main" style="margin-bottom: 24px;"> 
               <a href="https://www.romania-muzical.ro"> <i>www.romania-muzical.ro</i> </a> </br>
               <a href="https://www.radioromaniacultural.ro"> <i>www.radioromaniacultural.ro</i> </a> </br>
               <a href="https://www.adevarul.ro"> <i>www.adevarul.ro</i> </a> </br>
               <a href="https://www.casedemuzicieni.ro"> <i>www.casedemuzicieni.ro</i> </a> </br>
               <a href="https://www.wikipedia.org"> <i>www.wikipedia.org</i> </a> </br>
               </p>
-              <!-- calibram la finat marimea partilor, br asta face -->
+
             </div>
+
           </th>
           <th class="cell">
             <div class="cell_"></div>
@@ -364,5 +443,15 @@
         </tr>
       </table>
     </div>
+
+    <div class="footer">
+      <div class="footer-grid">
+        <div class="footer-item">Adobroaiei David</div>
+        <div class="footer-item">Gabără Sorin Gabriel</div>
+        <div class="footer-item">Ciobanu Casian</div>
+        <div class="footer-item">Bejan Răzvan</div>
+      </div>
+    </div>
+
   </body>
 </html>

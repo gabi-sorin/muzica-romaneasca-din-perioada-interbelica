@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artiști Interbelici</title>
+    <link rel="stylesheet" href="./../artisti_style.css" />
+    <link rel="stylesheet" href="./../menu_bar.css"/>
+    <link rel="stylesheet" href="./../styles.css"/>    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+  />
+  <link rel="stylesheet" href="./../style.css" />
+</head>
+<body>
+  <script src="./../movement.js"></script>
+  <script src="./../search_bar_logic.js"></script>
+
+  <div class="menu_bar">
+    <table>
+      <tr>
+        <th class="menu_cells">
+          <a href="./../index.html">
+            <img src="./../poze/acasa.png" alt="Acasă" /> Acasă
+          </a>
+        </th>
+
+        <th class="menu_cells">
+          <a href="./../artisti.html"> Artiști </a>
+        </th>
+
+        <th class="menu_cells">
+          <div class="iframe-container">
+            <form>
+              <div class="search-wrapper">
+                <div class="search">
+                  <span class="material-symbols-outlined">search</span>
+                  <div class="input-wrapper">
+                    <input
+                      class="search-input"
+                      id="searches-input"
+                      type="search"
+                      onclick="cauta(''+document.getElementById('searches-input').value)"
+                      placeholder="Căutare"
+                      autocomplete="off"
+                    />
+                    <div class="suggestions-wrap">
+                      <ul class="suggestions">
+                        <!-- Suggestii generate -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </th>
+      </tr>
+    </table>
+  </div>
+      
+    <img width="20%" src="./../poze/constantintanase.jfif" style="float: right; margin-left: 5px; margin-bottom: 5px;">
+    <div class="container_titlu">
+      <p class="titlu";> Constantin Tănase (5 iulie 1880 - 29 august 1945) </p>
+      <p class="porecla"> Năsăilă </p>
+    </div>
+    <p class="text";>O figură legendară a teatrului de revistă românesc. </p>
+    <p class="subtitlu";> Copilăria </p>
+    <p class="text";> Actor de scenă și de vodevil, celebrul cupletist Constantin Tănase s-a născut la Vaslui.
+        S-a născut într-o familie modestă: Tatăl era laborant de farmacie.
+        Primul contact cu teatrul l-a avut prin frecventarea spectacolelor de la Grădina „Pârjoala”.</p>
+    <p class="subtitlu";> Începutul Carierei </p>
+    <p class="text";> Pentru că a fost cucerit pe loc de acest gen, s-a gândit să își formeze un grup de actori amatori, care să îi încânte pe cei apropiaţi.
+        Prima lor reprezentaţie a avut loc chiar în beciul casei. Apoi, au început să joace teatru în hambare sau chiar în poieni, numărul celor care veneau să îi vadă crescând constant.
+        Prima experiență profesională ca actor a fost în cadrul trupei de teatru de limbă idiș condusă de Mordechai Segalescu: aveau nevoie de un actor pentru un spectacol în Vaslui și a fost ales tânărul Tănase, care era deja nelipsit de la repetiții. </p>
+    
+        <p class="text">La 14 octombrie 1899, se înrolează voluntar la Regimentul 1 Geniu București.</p>
+        <p class="subtitlu";> Succesul </p>
+    <p class="text";> După efectuarea stagiului militar, se înscrie la cursurile Conservatorului de Artă Dramatică, pe care l-a absolvit în 1905. Începe să lucreze în teatru și, în 1917, se căsătorește cu Virginia Niculescu.
+
+        Astfel, va pune bazele Teatrului Cărăbuș, denumirea dându-i-o după forma sălii. Deschiderea publică a acestuia are loc pe 2 iulie 1919, cu premiera revistei „Pisica pe orez”
+        
+        Din cauza nasului mare, primește porecla “Năsăilă”, ce va deveni faimoasă și de care se va atașa.
+        
+        Inspirat de show-urile de cabaret pe care le vede în Franța, pune în scenă, la București, spectacole strălucite pe scena de la Cărăbuș și, ulterior, Savoy, lansează mari vedete, face turnee în străinătate lăudate de presa internațională a vremii.
+        
+        <p class="subtitlu"> Moștenirea </p>
+        <p class="text">În afara numeroaselor producții teatrale, CONSTANTIN TĂNASE a cochetat și cu cinematograful, atât ca actor, cât și ca regizor, aducând în cele câteva filme care-l au drept protagonist, propriul său personaj: ”Călătoriile lui Rigadin de la Paris la București”, ”Visul lui Tănase”, ”Răbdare, Tănase!”. </p>
+    <p class="subtitlu";> Decesul </p>
+    <p class="text";> Constantin Tănase se stinge din viață pe 29 august 1945 și a fost înmormântat la cimitirul Bellu. Cea mai populara teorie spune că ar fi fost ucis de armata roșie din cauza spectacolelor cu satiră adresată armatei roșii. </p> 
+    
+    </br>
+
+    <table class="center">
+        <tr>
+            <td>
+                <iframe height="220.5" src="https://www.youtube.com/embed/NIU0zCrn5MA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </td>
+            <td>
+                <iframe height="220.5" src="https://www.youtube.com/embed/cF3wXstbQg0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
